@@ -23,10 +23,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     UIApplication.shared.statusBarStyle = .lightContent
     UIApplication.shared.isStatusBarHidden = false
     
+    // Firebase Initial
     FirebaseApp.configure()
     
+    // Facebook Login Delegate
     FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
     
+    // Check Current User
     if Auth.auth().currentUser == nil {
       let rootController = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "LoginScreen")
       self.window?.rootViewController = rootController

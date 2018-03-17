@@ -10,6 +10,8 @@
 		9EFA8F03C8EF1A9E8549235B /* Pods_PhonemoQuiz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD55E18DF42168E3F61CAE7A /* Pods_PhonemoQuiz.framework */; };
 		D0012605205D7A2F006CA6B7 /* LobbyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0012604205D7A2F006CA6B7 /* LobbyViewController.swift */; };
 		D0012607205D7CFB006CA6B7 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0012606205D7CFB006CA6B7 /* ProfileViewController.swift */; };
+		D001260B205D89CB006CA6B7 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D001260A205D89CB006CA6B7 /* Profile.storyboard */; };
+		D02C563F205D8B2D00BDDB55 /* Lobby.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D02C563E205D8B2D00BDDB55 /* Lobby.storyboard */; };
 		D0F5765F205D45B200ED72BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F5765E205D45B200ED72BE /* AppDelegate.swift */; };
 		D0F57661205D45B200ED72BE /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F57660205D45B200ED72BE /* LogInViewController.swift */; };
 		D0F57664205D45B200ED72BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0F57662205D45B200ED72BE /* Main.storyboard */; };
@@ -24,6 +26,8 @@
 		64E4F5466109C1B1A7C300C2 /* Pods-PhonemoQuiz.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhonemoQuiz.release.xcconfig"; path = "Pods/Target Support Files/Pods-PhonemoQuiz/Pods-PhonemoQuiz.release.xcconfig"; sourceTree = "<group>"; };
 		D0012604205D7A2F006CA6B7 /* LobbyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyViewController.swift; sourceTree = "<group>"; };
 		D0012606205D7CFB006CA6B7 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		D001260A205D89CB006CA6B7 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		D02C563E205D8B2D00BDDB55 /* Lobby.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Lobby.storyboard; sourceTree = "<group>"; };
 		D0F5765B205D45B200ED72BE /* PhonemoQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhonemoQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0F5765E205D45B200ED72BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D0F57660205D45B200ED72BE /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
@@ -132,6 +136,8 @@
 		D0F5767B205D72CF00ED72BE /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				D02C563E205D8B2D00BDDB55 /* Lobby.storyboard */,
+				D001260A205D89CB006CA6B7 /* Profile.storyboard */,
 				D0F57662205D45B200ED72BE /* Main.storyboard */,
 			);
 			path = Storyboards;
@@ -209,7 +215,9 @@
 				D0F57671205D4DFA00ED72BE /* GoogleService-Info.plist in Resources */,
 				D0F57677205D542C00ED72BE /* SukhumvitSet.ttc in Resources */,
 				D0F57666205D45B200ED72BE /* Assets.xcassets in Resources */,
+				D001260B205D89CB006CA6B7 /* Profile.storyboard in Resources */,
 				D0F57664205D45B200ED72BE /* Main.storyboard in Resources */,
+				D02C563F205D8B2D00BDDB55 /* Lobby.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

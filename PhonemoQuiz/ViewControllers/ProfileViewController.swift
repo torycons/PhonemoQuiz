@@ -15,14 +15,16 @@ class ProfileViewController: UIViewController {
     
   }
   
-  
-  @IBAction func LogoutBtn(_ sender: UIBarButtonItem) {
+  @IBAction fileprivate func LogoutBtn(_ sender: UIBarButtonItem) {
     do {
-      try? Auth.auth().signOut()
-    } catch {
-      print("Can't Log out")
+      try Auth.auth().signOut()
+      goToLoginPage()
+    } catch let signOutError as NSError {
+      print("Can't Log out", signOutError)
     }
-    
+  }
+  
+  fileprivate func goToLoginPage() {
     let loginStoryBoard = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "LoginScreen")
     self.present(loginStoryBoard, animated: true, completion: nil)
   }
