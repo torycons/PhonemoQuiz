@@ -7,21 +7,32 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9EFA8F03C8EF1A9E8549235B /* Pods_PhonemoQuiz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD55E18DF42168E3F61CAE7A /* Pods_PhonemoQuiz.framework */; };
 		D0F5765F205D45B200ED72BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F5765E205D45B200ED72BE /* AppDelegate.swift */; };
-		D0F57661205D45B200ED72BE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F57660205D45B200ED72BE /* ViewController.swift */; };
+		D0F57661205D45B200ED72BE /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F57660205D45B200ED72BE /* LogInViewController.swift */; };
 		D0F57664205D45B200ED72BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0F57662205D45B200ED72BE /* Main.storyboard */; };
 		D0F57666205D45B200ED72BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0F57665205D45B200ED72BE /* Assets.xcassets */; };
 		D0F57669205D45B200ED72BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0F57667205D45B200ED72BE /* LaunchScreen.storyboard */; };
+		D0F57671205D4DFA00ED72BE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D0F57670205D4DFA00ED72BE /* GoogleService-Info.plist */; };
+		D0F57674205D50CB00ED72BE /* CaveatBrush-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D0F57673205D4F3D00ED72BE /* CaveatBrush-Regular.ttf */; };
+		D0F57677205D542C00ED72BE /* SukhumvitSet.ttc in Resources */ = {isa = PBXBuildFile; fileRef = D0F57675205D522E00ED72BE /* SukhumvitSet.ttc */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		64E4F5466109C1B1A7C300C2 /* Pods-PhonemoQuiz.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhonemoQuiz.release.xcconfig"; path = "Pods/Target Support Files/Pods-PhonemoQuiz/Pods-PhonemoQuiz.release.xcconfig"; sourceTree = "<group>"; };
 		D0F5765B205D45B200ED72BE /* PhonemoQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhonemoQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0F5765E205D45B200ED72BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D0F57660205D45B200ED72BE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D0F57660205D45B200ED72BE /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		D0F57663205D45B200ED72BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D0F57665205D45B200ED72BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D0F57668205D45B200ED72BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D0F5766A205D45B200ED72BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D0F57670205D4DFA00ED72BE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D0F57673205D4F3D00ED72BE /* CaveatBrush-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CaveatBrush-Regular.ttf"; sourceTree = "<group>"; };
+		D0F57675205D522E00ED72BE /* SukhumvitSet.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = SukhumvitSet.ttc; sourceTree = "<group>"; };
+		D0F57678205D655100ED72BE /* PhonemoQuiz.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PhonemoQuiz.entitlements; sourceTree = "<group>"; };
+		DD55E18DF42168E3F61CAE7A /* Pods_PhonemoQuiz.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PhonemoQuiz.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EBD0D9B77BB3B0508D22C6E5 /* Pods-PhonemoQuiz.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhonemoQuiz.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PhonemoQuiz/Pods-PhonemoQuiz.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +40,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9EFA8F03C8EF1A9E8549235B /* Pods_PhonemoQuiz.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1464711D2AAB56EABD06AA72 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EBD0D9B77BB3B0508D22C6E5 /* Pods-PhonemoQuiz.debug.xcconfig */,
+				64E4F5466109C1B1A7C300C2 /* Pods-PhonemoQuiz.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		78628D479C714B000809D30E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DD55E18DF42168E3F61CAE7A /* Pods_PhonemoQuiz.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D0F57652205D45B200ED72BE = {
 			isa = PBXGroup;
 			children = (
 				D0F5765D205D45B200ED72BE /* PhonemoQuiz */,
 				D0F5765C205D45B200ED72BE /* Products */,
+				1464711D2AAB56EABD06AA72 /* Pods */,
+				78628D479C714B000809D30E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +85,50 @@
 		D0F5765D205D45B200ED72BE /* PhonemoQuiz */ = {
 			isa = PBXGroup;
 			children = (
-				D0F5765E205D45B200ED72BE /* AppDelegate.swift */,
-				D0F57660205D45B200ED72BE /* ViewController.swift */,
-				D0F57662205D45B200ED72BE /* Main.storyboard */,
+				D0F5767B205D72CF00ED72BE /* Storyboards */,
+				D0F57678205D655100ED72BE /* PhonemoQuiz.entitlements */,
+				D0F5767A205D71DB00ED72BE /* SupportingFiles */,
+				D0F57679205D71CB00ED72BE /* ViewControllers */,
+				D0F57676205D523300ED72BE /* Fonts */,
 				D0F57665205D45B200ED72BE /* Assets.xcassets */,
-				D0F57667205D45B200ED72BE /* LaunchScreen.storyboard */,
 				D0F5766A205D45B200ED72BE /* Info.plist */,
+				D0F57670205D4DFA00ED72BE /* GoogleService-Info.plist */,
 			);
 			path = PhonemoQuiz;
+			sourceTree = "<group>";
+		};
+		D0F57676205D523300ED72BE /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				D0F57673205D4F3D00ED72BE /* CaveatBrush-Regular.ttf */,
+				D0F57675205D522E00ED72BE /* SukhumvitSet.ttc */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		D0F57679205D71CB00ED72BE /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				D0F57660205D45B200ED72BE /* LogInViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		D0F5767A205D71DB00ED72BE /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				D0F57667205D45B200ED72BE /* LaunchScreen.storyboard */,
+				D0F5765E205D45B200ED72BE /* AppDelegate.swift */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		D0F5767B205D72CF00ED72BE /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				D0F57662205D45B200ED72BE /* Main.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +138,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D0F5766D205D45B200ED72BE /* Build configuration list for PBXNativeTarget "PhonemoQuiz" */;
 			buildPhases = (
+				A4038CFEA25643928AD68376 /* [CP] Check Pods Manifest.lock */,
 				D0F57657205D45B200ED72BE /* Sources */,
 				D0F57658205D45B200ED72BE /* Frameworks */,
 				D0F57659205D45B200ED72BE /* Resources */,
+				4D2B787E0416661F4AF3ED02 /* [CP] Embed Pods Frameworks */,
+				D7D72A3F06369FB755D0D949 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -97,6 +167,11 @@
 					D0F5765A205D45B200ED72BE = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -123,7 +198,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0F57674205D50CB00ED72BE /* CaveatBrush-Regular.ttf in Resources */,
 				D0F57669205D45B200ED72BE /* LaunchScreen.storyboard in Resources */,
+				D0F57671205D4DFA00ED72BE /* GoogleService-Info.plist in Resources */,
+				D0F57677205D542C00ED72BE /* SukhumvitSet.ttc in Resources */,
 				D0F57666205D45B200ED72BE /* Assets.xcassets in Resources */,
 				D0F57664205D45B200ED72BE /* Main.storyboard in Resources */,
 			);
@@ -131,12 +209,76 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4D2B787E0416661F4AF3ED02 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-PhonemoQuiz/Pods-PhonemoQuiz-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PhonemoQuiz/Pods-PhonemoQuiz-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A4038CFEA25643928AD68376 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PhonemoQuiz-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D7D72A3F06369FB755D0D949 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PhonemoQuiz/Pods-PhonemoQuiz-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D0F57657205D45B200ED72BE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D0F57661205D45B200ED72BE /* ViewController.swift in Sources */,
+				D0F57661205D45B200ED72BE /* LogInViewController.swift in Sources */,
 				D0F5765F205D45B200ED72BE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -272,8 +414,10 @@
 		};
 		D0F5766E205D45B200ED72BE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EBD0D9B77BB3B0508D22C6E5 /* Pods-PhonemoQuiz.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = PhonemoQuiz/PhonemoQuiz.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6M47TVX487;
 				INFOPLIST_FILE = PhonemoQuiz/Info.plist;
@@ -287,8 +431,10 @@
 		};
 		D0F5766F205D45B200ED72BE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 64E4F5466109C1B1A7C300C2 /* Pods-PhonemoQuiz.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = PhonemoQuiz/PhonemoQuiz.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6M47TVX487;
 				INFOPLIST_FILE = PhonemoQuiz/Info.plist;
