@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mCs-a4-sG5">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -21,7 +21,7 @@
         <!--Log In View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LogInViewController" customModule="PhonemoQuiz" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginScreen" id="BYZ-38-t0r" customClass="LogInViewController" customModule="PhonemoQuiz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -73,17 +73,16 @@
                     </view>
                     <connections>
                         <outlet property="loginBtn" destination="Hyb-qA-Tni" id="gDY-4M-gFC"/>
-                        <segue destination="mCs-a4-sG5" kind="show" identifier="mainPage" id="hoQ-MO-Y4m"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1852" y="1470"/>
+            <point key="canvasLocation" x="-665" y="502"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="8f4-Hg-7T8">
             <objects>
-                <viewController id="F2f-lD-wae" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LobbyScreen" id="F2f-lD-wae" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KAB-7M-tN2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -96,17 +95,23 @@
             </objects>
             <point key="canvasLocation" x="1874" y="1000"/>
         </scene>
-        <!--View Controller-->
+        <!--Profile View Controller-->
         <scene sceneID="P8s-5D-lOh">
             <objects>
-                <viewController id="gNY-Mi-QXF" sceneMemberID="viewController">
+                <viewController id="gNY-Mi-QXF" customClass="ProfileViewController" customModule="PhonemoQuiz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BUM-mF-qQg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="m1a-kv-EfF"/>
                     </view>
-                    <navigationItem key="navigationItem" id="bVS-TK-upv"/>
+                    <navigationItem key="navigationItem" id="bVS-TK-upv">
+                        <barButtonItem key="rightBarButtonItem" title="Logout" id="cYe-eV-58N">
+                            <connections>
+                                <action selector="LogoutBtn:" destination="gNY-Mi-QXF" id="yaX-WN-IN7"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NhY-Ip-IWM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -118,6 +123,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="mCs-a4-sG5" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="x38-w0-Ef0">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>

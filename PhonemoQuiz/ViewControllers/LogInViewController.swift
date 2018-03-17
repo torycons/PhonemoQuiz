@@ -18,36 +18,16 @@ class LogInViewController: UIViewController {
       loginBtn.layer.cornerRadius = 5
     }
   }
+  
   override func viewDidLoad() {
     super.viewDidLoad()
-//    let loginButton = FBSDKLoginButton()
-//    view.addSubview(loginButton)
-//    loginButton.readPermissions = ["email", "public_profile"]
-//    loginButton.frame = CGRect(x: 16, y: 50, width: view.frame.width - 32, height: 50)
-//    loginButton.delegate = self
     
   }
   
-//  func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
-//    print("Log out From facebook")
-//  }
-//
-//  func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
-//    if error != nil {
-//      print(error.localizedDescription)
-//      return
-//    }
-//
-//    print("Successfully log in with facebook")
-//    FBSDKGraphRequest(graphPath: "/me", parameters: ["fields": "id, name, email"]).start { (connection, result, error) in
-//      if error != nil {
-//        print(error)
-//        return
-//      }
-//
-//      print(result)
-//    }
-//  }
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+    
+  }
   
   
   @IBAction func LoginFacebook(_ sender: UIButton) {
@@ -72,7 +52,9 @@ class LogInViewController: UIViewController {
         }
         print(result ?? "")
         
-        self.performSegue(withIdentifier: "mainPage", sender: nil)
+        let mainStoryBoard = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateInitialViewController()
+        guard let mainSB = mainStoryBoard else { return }
+        self.present(mainSB, animated: true, completion: nil)
       }
     }
   }

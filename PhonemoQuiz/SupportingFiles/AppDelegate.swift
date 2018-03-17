@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 import Firebase
 import FBSDKCoreKit
 
@@ -25,6 +26,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     FirebaseApp.configure()
     
     FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+    
+    if Auth.auth().currentUser == nil {
+      let rootController = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "LoginScreen")
+      self.window?.rootViewController = rootController
+    }
     
     return true
   }
