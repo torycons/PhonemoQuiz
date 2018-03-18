@@ -9,15 +9,9 @@
 import UIKit
 import FirebaseAuth
 
-class LobbyViewController: UICollectionViewController {
+class LobbyViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
-    
-    
   }
   
-  override func viewDidAppear(_ animated: Bool) {
-    super.viewDidAppear(animated)
-    
-  }
 }

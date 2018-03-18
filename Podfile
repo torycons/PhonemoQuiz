@@ -8,8 +8,8 @@ target 'PhonemoQuiz' do
   # Pods for PhonemoQuiz
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
-  pod 'Bolts'
   pod 'FBSDKCoreKit'
   pod 'FBSDKLoginKit'
+  pod 'FBSDKShareKit'
 
 end

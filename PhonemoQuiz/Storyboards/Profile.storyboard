@@ -6,8 +6,17 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="SukhumvitSet.ttc">
+            <string>SukhumvitSet-Medium</string>
+            <string>SukhumvitSet-SemiBold</string>
+            <string>SukhumvitSet-Thin</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Profile-->
         <scene sceneID="TkN-5Y-RqG">
@@ -24,7 +33,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="0vg-Sq-bh4" kind="relationship" relationship="rootViewController" id="hig-L7-gUD"/>
+                        <segue destination="Iiy-vH-wal" kind="relationship" relationship="rootViewController" id="Ojt-ZI-XEZ"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bqt-rd-Rd4" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -32,49 +41,90 @@
             <point key="canvasLocation" x="809" y="1907"/>
         </scene>
         <!--Profile-->
-        <scene sceneID="wuL-PO-ROy">
+        <scene sceneID="2RV-zq-8VU">
             <objects>
-                <collectionViewController id="0vg-Sq-bh4" customClass="ProfileViewController" customModule="PhonemoQuiz" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="8An-nf-JJs">
+                <viewController id="Iiy-vH-wal" customClass="ProfileViewController" customModule="PhonemoQuiz" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="R24-fk-rKw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BXc-Hv-bpn">
+                                <rect key="frame" x="20" y="104" width="335" height="110"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ProfilePic" translatesAutoresizingMaskIntoConstraints="NO" id="mDo-ds-oPd">
+                                        <rect key="frame" x="30" y="18" width="74" height="74"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="mDo-ds-oPd" secondAttribute="height" id="Fh2-3V-T76"/>
+                                        </constraints>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="wxw-oM-Gmu">
+                                        <rect key="frame" x="129" y="23" width="175.5" height="65"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thanapat Sorralump" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="bNL-gS-OvT">
+                                                <rect key="frame" x="0.0" y="0.0" width="175.5" height="32"/>
+                                                <fontDescription key="fontDescription" name="SukhumvitSet-Medium" family="Sukhumvit Set" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Nrv-ma-446">
+                                                <rect key="frame" x="0.0" y="33" width="143.5" height="32"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="คะแนนสูงสุด:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="XEv-po-uWq">
+                                                        <rect key="frame" x="0.0" y="0.0" width="105.5" height="32"/>
+                                                        <fontDescription key="fontDescription" name="SukhumvitSet-SemiBold" family="Sukhumvit Set" pointSize="20"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="999" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="tHV-ss-cu3">
+                                                        <rect key="frame" x="110.5" y="0.0" width="33" height="32"/>
+                                                        <fontDescription key="fontDescription" name="SukhumvitSet-Thin" family="Sukhumvit Set" pointSize="20"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="mDo-ds-oPd" firstAttribute="leading" secondItem="BXc-Hv-bpn" secondAttribute="leading" constant="30" id="0ul-Iy-fBj"/>
+                                    <constraint firstItem="wxw-oM-Gmu" firstAttribute="leading" secondItem="mDo-ds-oPd" secondAttribute="trailing" constant="25" id="60Q-mS-1pX"/>
+                                    <constraint firstAttribute="bottom" secondItem="mDo-ds-oPd" secondAttribute="bottom" constant="18" id="Dgp-95-vAj"/>
+                                    <constraint firstAttribute="height" constant="110" id="K94-YB-yxd"/>
+                                    <constraint firstItem="wxw-oM-Gmu" firstAttribute="centerY" secondItem="BXc-Hv-bpn" secondAttribute="centerY" id="LEL-RE-UeU"/>
+                                    <constraint firstItem="mDo-ds-oPd" firstAttribute="top" secondItem="BXc-Hv-bpn" secondAttribute="top" constant="18" id="kkh-8d-xKy"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="jMe-8t-EDz">
-                            <size key="itemSize" width="50" height="50"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        </collectionViewFlowLayout>
-                        <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Z6C-gE-W2K">
-                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </view>
-                            </collectionViewCell>
-                        </cells>
-                        <connections>
-                            <outlet property="dataSource" destination="0vg-Sq-bh4" id="HL5-Ux-B3l"/>
-                            <outlet property="delegate" destination="0vg-Sq-bh4" id="cLC-47-Jej"/>
-                        </connections>
-                    </collectionView>
-                    <navigationItem key="navigationItem" title="Profile" id="TJV-8a-URM">
-                        <barButtonItem key="rightBarButtonItem" title="Log out" id="ZTg-35-4LX">
+                        <constraints>
+                            <constraint firstItem="BXc-Hv-bpn" firstAttribute="leading" secondItem="aP0-ZR-ssq" secondAttribute="leading" constant="20" id="ORH-Ft-Zzr"/>
+                            <constraint firstItem="aP0-ZR-ssq" firstAttribute="trailing" secondItem="BXc-Hv-bpn" secondAttribute="trailing" constant="20" id="gKW-5y-6mf"/>
+                            <constraint firstItem="BXc-Hv-bpn" firstAttribute="top" secondItem="aP0-ZR-ssq" secondAttribute="top" constant="40" id="yFK-JN-oFT"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="aP0-ZR-ssq"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Profile" id="2QG-Ua-YGc">
+                        <barButtonItem key="rightBarButtonItem" title="Log out" id="cXD-Mr-PyF">
                             <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
-                                <action selector="LogoutBtn:" destination="0vg-Sq-bh4" id="lSN-TI-dKe"/>
+                                <action selector="LogoutBtn:" destination="Iiy-vH-wal" id="nMQ-6b-5iA"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                </collectionViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zdy-5N-OMW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                    <connections>
+                        <outlet property="profileImage" destination="mDo-ds-oPd" id="h4h-SK-VBQ"/>
+                        <outlet property="profileWrapper" destination="BXc-Hv-bpn" id="Nvf-PH-PMc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ACI-fI-61b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1852" y="1907"/>
+            <point key="canvasLocation" x="1880.8" y="1906.5967016491757"/>
         </scene>
     </scenes>
     <resources>
+        <image name="ProfilePic" width="960" height="960"/>
         <image name="profile" width="24" height="24"/>
     </resources>
 </document>

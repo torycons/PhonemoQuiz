@@ -10,6 +10,7 @@ import UIKit
 import FirebaseAuth
 import Firebase
 import FBSDKCoreKit
+import FBSDKLoginKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -26,11 +27,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // NavigationBar Style
     UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
     
-    // Firebase Initial
-    FirebaseApp.configure()
-    
     // Facebook Login Delegate
     FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+
+    // Firebase Initial
+    FirebaseApp.configure()
     
     // Check Current User
     if Auth.auth().currentUser == nil {
@@ -43,7 +44,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   
   func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
     let handled = FBSDKApplicationDelegate.sharedInstance().application(app, open: url, sourceApplication: options[UIApplicationOpenURLOptionsKey.sourceApplication] as! String, annotation: options[UIApplicationOpenURLOptionsKey.annotation])
-    
     return handled
   }
   
@@ -66,7 +66,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   }
   
   func applicationWillTerminate(_ application: UIApplication) {
-    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.    
   }
   
   

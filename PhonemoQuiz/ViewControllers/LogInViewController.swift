@@ -11,7 +11,7 @@ import FBSDKLoginKit
 import FirebaseAuth
 
 class LogInViewController: UIViewController {
-
+  
   @IBOutlet fileprivate weak var loginBtn: UIButton! {
     didSet {
       loginBtn.layer.cornerRadius = 5
@@ -20,13 +20,31 @@ class LogInViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
-    
   }
   
+  //MARK:- Log in Facebook Functions
   @IBAction fileprivate func LoginFacebook(_ sender: UIButton) {
-    loginFirebase()
     loginFBSDK()
+  }
+  
+  fileprivate func loginFBSDK() {
+    FBSDKLoginManager().logIn(withReadPermissions: ["email", "public_profile"], from: self) { (result, err) in
+      if err != nil {
+        print(err ?? "")
+        return
+      }
+      self.readEmail()
+    }
+  }
+  
+  fileprivate func readEmail() {
+    FBSDKGraphRequest(graphPath: "/me", parameters: ["fields": "id, name, email"]).start { (connection, result, error) in
+      if error != nil {
+        print(error ?? "")
+        return
+      }
+      self.loginFirebase()
+    }
   }
   
   fileprivate func loginFirebase() {
@@ -36,25 +54,10 @@ class LogInViewController: UIViewController {
         print(err ?? "")
         return
       }
+      self.changeToMainSB()
     }
   }
-  
-  fileprivate func loginFBSDK() {
-    FBSDKLoginManager().logIn(withReadPermissions: ["email", "public_profile"], from: self) { (result, err) in
-      if err != nil {
-        print(err ?? "")
-        return
-      }
-      FBSDKGraphRequest(graphPath: "/me", parameters: ["fields": "id, name, email"]).start { (connection, result, error) in
-        if error != nil {
-          print(error ?? "")
-          return
-        }
-        self.changeToMainSB()
-      }
-    }
-  }
-  
+
   fileprivate func changeToMainSB() {
     let mainStoryBoard = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateInitialViewController()
     guard let mainSB = mainStoryBoard else { return }

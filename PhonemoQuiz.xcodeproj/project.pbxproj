@@ -26,6 +26,7 @@
 		64E4F5466109C1B1A7C300C2 /* Pods-PhonemoQuiz.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhonemoQuiz.release.xcconfig"; path = "Pods/Target Support Files/Pods-PhonemoQuiz/Pods-PhonemoQuiz.release.xcconfig"; sourceTree = "<group>"; };
 		D0012604205D7A2F006CA6B7 /* LobbyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyViewController.swift; sourceTree = "<group>"; };
 		D0012606205D7CFB006CA6B7 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		D0CB6E5B205E5091005646D7 /* PhonemoQuiz.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PhonemoQuiz.entitlements; sourceTree = "<group>"; };
 		D0CED39C205E3D5A00CE708A /* Lobby.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Lobby.storyboard; sourceTree = "<group>"; };
 		D0CED39E205E3D9800CE708A /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		D0F5765B205D45B200ED72BE /* PhonemoQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhonemoQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -38,7 +39,6 @@
 		D0F57670205D4DFA00ED72BE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D0F57673205D4F3D00ED72BE /* CaveatBrush-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CaveatBrush-Regular.ttf"; sourceTree = "<group>"; };
 		D0F57675205D522E00ED72BE /* SukhumvitSet.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = SukhumvitSet.ttc; sourceTree = "<group>"; };
-		D0F57678205D655100ED72BE /* PhonemoQuiz.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PhonemoQuiz.entitlements; sourceTree = "<group>"; };
 		DD55E18DF42168E3F61CAE7A /* Pods_PhonemoQuiz.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PhonemoQuiz.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBD0D9B77BB3B0508D22C6E5 /* Pods-PhonemoQuiz.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhonemoQuiz.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PhonemoQuiz/Pods-PhonemoQuiz.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -93,8 +93,8 @@
 		D0F5765D205D45B200ED72BE /* PhonemoQuiz */ = {
 			isa = PBXGroup;
 			children = (
+				D0CB6E5B205E5091005646D7 /* PhonemoQuiz.entitlements */,
 				D0F5767B205D72CF00ED72BE /* Storyboards */,
-				D0F57678205D655100ED72BE /* PhonemoQuiz.entitlements */,
 				D0F5767A205D71DB00ED72BE /* SupportingFiles */,
 				D0F57679205D71CB00ED72BE /* ViewControllers */,
 				D0F57676205D523300ED72BE /* Fonts */,
@@ -234,6 +234,7 @@
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKShareKit/FBSDKShareKit.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
@@ -243,6 +244,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKShareKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",

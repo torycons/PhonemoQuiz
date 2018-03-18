@@ -93,7 +93,7 @@
         <scene sceneID="fMU-3u-1kC">
             <objects>
                 <viewControllerPlaceholder storyboardName="Lobby" id="udS-th-wI6" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="caC-uB-cDd"/>
+                    <tabBarItem key="tabBarItem" title="Lobby" image="lobby" selectedImage="lobby" id="caC-uB-cDd"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EQf-XQ-d4a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -103,11 +103,15 @@
         <scene sceneID="cKD-bU-c1L">
             <objects>
                 <viewControllerPlaceholder storyboardName="Profile" id="9o2-vT-ZVJ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="aZ9-0X-nTE"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="profile" selectedImage="profile" id="aZ9-0X-nTE"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rze-8y-nTp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="811" y="1643"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="lobby" width="24" height="22"/>
+        <image name="profile" width="24" height="24"/>
+    </resources>
 </document>
