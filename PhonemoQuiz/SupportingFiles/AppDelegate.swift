@@ -23,6 +23,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     UIApplication.shared.statusBarStyle = .lightContent
     UIApplication.shared.isStatusBarHidden = false
     
+    // NavigationBar Style
+    UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
+    
     // Firebase Initial
     FirebaseApp.configure()
     

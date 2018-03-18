@@ -11,7 +11,6 @@ import FBSDKLoginKit
 import FirebaseAuth
 
 class LogInViewController: UIViewController {
-  
 
   @IBOutlet fileprivate weak var loginBtn: UIButton! {
     didSet {
@@ -22,13 +21,8 @@ class LogInViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-  }
-  
-  override func viewDidAppear(_ animated: Bool) {
-    super.viewDidAppear(animated)
     
   }
-  
   
   @IBAction fileprivate func LoginFacebook(_ sender: UIButton) {
     loginFirebase()
