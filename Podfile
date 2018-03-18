@@ -11,5 +11,6 @@ target 'PhonemoQuiz' do
   pod 'FBSDKCoreKit'
   pod 'FBSDKLoginKit'
   pod 'FBSDKShareKit'
-
+  pod 'SVProgressHUD'
+  
 end

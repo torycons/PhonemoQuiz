@@ -10,6 +10,7 @@
 		9EFA8F03C8EF1A9E8549235B /* Pods_PhonemoQuiz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD55E18DF42168E3F61CAE7A /* Pods_PhonemoQuiz.framework */; };
 		D0012605205D7A2F006CA6B7 /* LobbyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0012604205D7A2F006CA6B7 /* LobbyViewController.swift */; };
 		D0012607205D7CFB006CA6B7 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0012606205D7CFB006CA6B7 /* ProfileViewController.swift */; };
+		D0735947205EC5F700F583F9 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0735946205EC5F700F583F9 /* UIView.swift */; };
 		D0CED39D205E3D5A00CE708A /* Lobby.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0CED39C205E3D5A00CE708A /* Lobby.storyboard */; };
 		D0CED39F205E3D9800CE708A /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0CED39E205E3D9800CE708A /* Profile.storyboard */; };
 		D0F5765F205D45B200ED72BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F5765E205D45B200ED72BE /* AppDelegate.swift */; };
@@ -26,6 +27,7 @@
 		64E4F5466109C1B1A7C300C2 /* Pods-PhonemoQuiz.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhonemoQuiz.release.xcconfig"; path = "Pods/Target Support Files/Pods-PhonemoQuiz/Pods-PhonemoQuiz.release.xcconfig"; sourceTree = "<group>"; };
 		D0012604205D7A2F006CA6B7 /* LobbyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyViewController.swift; sourceTree = "<group>"; };
 		D0012606205D7CFB006CA6B7 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		D0735946205EC5F700F583F9 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		D0CB6E5B205E5091005646D7 /* PhonemoQuiz.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PhonemoQuiz.entitlements; sourceTree = "<group>"; };
 		D0CED39C205E3D5A00CE708A /* Lobby.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Lobby.storyboard; sourceTree = "<group>"; };
 		D0CED39E205E3D9800CE708A /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
@@ -72,6 +74,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D0735945205EC5E000F583F9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D0735946205EC5F700F583F9 /* UIView.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		D0F57652205D45B200ED72BE = {
 			isa = PBXGroup;
 			children = (
@@ -93,6 +103,7 @@
 		D0F5765D205D45B200ED72BE /* PhonemoQuiz */ = {
 			isa = PBXGroup;
 			children = (
+				D0735945205EC5E000F583F9 /* Extensions */,
 				D0CB6E5B205E5091005646D7 /* PhonemoQuiz.entitlements */,
 				D0F5767B205D72CF00ED72BE /* Storyboards */,
 				D0F5767A205D71DB00ED72BE /* SupportingFiles */,
@@ -237,6 +248,7 @@
 				"${BUILT_PRODUCTS_DIR}/FBSDKShareKit/FBSDKShareKit.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -247,6 +259,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKShareKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -294,6 +307,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0735947205EC5F700F583F9 /* UIView.swift in Sources */,
 				D0012605205D7A2F006CA6B7 /* LobbyViewController.swift in Sources */,
 				D0F57661205D45B200ED72BE /* LogInViewController.swift in Sources */,
 				D0012607205D7CFB006CA6B7 /* ProfileViewController.swift in Sources */,

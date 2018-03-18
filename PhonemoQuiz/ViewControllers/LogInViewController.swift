@@ -9,6 +9,7 @@
 import UIKit
 import FBSDKLoginKit
 import FirebaseAuth
+import SVProgressHUD
 
 class LogInViewController: UIViewController {
   
@@ -33,16 +34,18 @@ class LogInViewController: UIViewController {
         print(err ?? "")
         return
       }
+      self.view.showLoading()
       self.readEmail()
     }
   }
   
   fileprivate func readEmail() {
-    FBSDKGraphRequest(graphPath: "/me", parameters: ["fields": "id, name, email"]).start { (connection, result, error) in
+    FBSDKGraphRequest(graphPath: "/me", parameters: ["fields": "id, name, email, picture.type(large)"]).start { (connection, result, error) in
       if error != nil {
         print(error ?? "")
         return
       }
+      print(result ?? "")
       self.loginFirebase()
     }
   }
@@ -62,6 +65,7 @@ class LogInViewController: UIViewController {
     let mainStoryBoard = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateInitialViewController()
     guard let mainSB = mainStoryBoard else { return }
     self.present(mainSB, animated: true, completion: nil)
+    SVProgressHUD.dismiss()
   }
 }
 

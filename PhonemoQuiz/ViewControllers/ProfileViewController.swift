@@ -12,25 +12,32 @@ import FirebaseAuth
 
 class ProfileViewController: UIViewController {
   
-  @IBOutlet weak var profileWrapper: UIView! {
+  @IBOutlet fileprivate weak var profileWrapper: UIView! {
     didSet {
       profileWrapper.layer.cornerRadius = 7
     }
   }
   
-  @IBOutlet weak var profileImage: UIImageView! {
+  @IBOutlet fileprivate weak var profileImage: UIImageView! {
     didSet {
       profileImage.layer.cornerRadius = profileImage.frame.height/2
     }
   }
   
-  
   //MARK:- Life Cycle
   override func viewDidLoad() {
     super.viewDidLoad()
-    
   }
   
+  override func viewDidLayoutSubviews() {
+    super.viewDidLayoutSubviews()
+    setupView()
+  }
+  
+  //MARK:- Setup View
+  fileprivate func setupView() {
+    view.addShadowForRoundedButton(view: view, wrapper: profileWrapper, cornerRadius: 5)
+  }
   
   //MARK:- Logout Functions
   @IBAction fileprivate func LogoutBtn(_ sender: UIBarButtonItem) {
@@ -51,7 +58,6 @@ class ProfileViewController: UIViewController {
     } catch let signOutError as NSError {
       print("Can't Log out", signOutError)
     }
-    
   }
   
   fileprivate func goToLoginPage() {
