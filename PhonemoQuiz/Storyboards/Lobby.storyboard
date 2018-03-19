@@ -110,6 +110,9 @@
                                         <state key="normal" title="เริ่มเกม">
                                             <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="qBf-8Z-xaH" kind="presentation" id="pdk-qi-knp"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -148,6 +151,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m6d-Jw-19P" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1839.2" y="1178.8605697151424"/>
+        </scene>
+        <!--Game-->
+        <scene sceneID="Hgn-5x-E3C">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Game" id="qBf-8Z-xaH" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3rc-Ww-BaK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2602" y="1179"/>
         </scene>
     </scenes>
     <resources>

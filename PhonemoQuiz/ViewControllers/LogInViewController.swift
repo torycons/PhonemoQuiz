@@ -13,12 +13,14 @@ import SVProgressHUD
 
 class LogInViewController: UIViewController {
   
+  //MARK:- IBOutlet
   @IBOutlet fileprivate weak var loginBtn: UIButton! {
     didSet {
       loginBtn.layer.cornerRadius = 5
     }
   }
   
+  //MARK:- View LifeCycle
   override func viewDidLoad() {
     super.viewDidLoad()
   }

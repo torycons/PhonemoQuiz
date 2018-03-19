@@ -34,7 +34,7 @@
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thanapat  Sorralump" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="pKY-7b-FiA">
                         <rect key="frame" x="81" y="28" width="135" height="24"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="135" id="fgt-KA-QDf"/>
+                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="135" id="fgt-KA-QDf"/>
                         </constraints>
                         <fontDescription key="fontDescription" name="SukhumvitSet-Text" family="Sukhumvit Set" pointSize="15"/>
                         <nil key="textColor"/>

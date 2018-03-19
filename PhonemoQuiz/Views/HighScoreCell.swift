@@ -10,10 +10,10 @@ import UIKit
 
 class HighScoreCell: UICollectionViewCell {
 
-  @IBOutlet weak var numberPlayer: UILabel!
-  @IBOutlet weak var namePlayer: UILabel!
-  @IBOutlet weak var scorePlayer: UILabel!
-  @IBOutlet weak var playerPicture: UIImageView! {
+  @IBOutlet fileprivate weak var numberPlayer: UILabel!
+  @IBOutlet fileprivate weak var namePlayer: UILabel!
+  @IBOutlet fileprivate weak var scorePlayer: UILabel!
+  @IBOutlet fileprivate weak var playerPicture: UIImageView! {
     didSet {
       playerPicture.layer.cornerRadius = playerPicture.frame.height/2
     }
