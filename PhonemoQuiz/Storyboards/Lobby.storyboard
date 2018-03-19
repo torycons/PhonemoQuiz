@@ -6,9 +6,16 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="SukhumvitSet.ttc">
+            <string>SukhumvitSet-SemiBold</string>
+            <string>SukhumvitSet-Text</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Lobby-->
         <scene sceneID="sXZ-vu-KUT">
@@ -39,14 +46,108 @@
                     <view key="view" contentMode="scaleToFill" id="Fi8-xD-mbI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7r7-uy-XHC">
+                                <rect key="frame" x="30" y="94" width="315" height="300"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="คะแนนสูงสุด 5 อันดับ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Gk-iL-jQV">
+                                        <rect key="frame" x="15" y="15" width="154" height="29"/>
+                                        <fontDescription key="fontDescription" name="SukhumvitSet-SemiBold" family="Sukhumvit Set" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="NTC-jJ-cRM">
+                                        <rect key="frame" x="30" y="54" width="255" height="236"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Z5x-SU-9m6">
+                                            <size key="itemSize" width="50" height="50"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Cfh-8c-FOA">
+                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </view>
+                                            </collectionViewCell>
+                                        </cells>
+                                    </collectionView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="NTC-jJ-cRM" secondAttribute="trailing" constant="30" id="1HI-GN-J98"/>
+                                    <constraint firstItem="6Gk-iL-jQV" firstAttribute="leading" secondItem="7r7-uy-XHC" secondAttribute="leading" constant="15" id="Ha5-sB-iTf"/>
+                                    <constraint firstAttribute="bottom" secondItem="NTC-jJ-cRM" secondAttribute="bottom" constant="10" id="Qxr-Is-y88"/>
+                                    <constraint firstItem="NTC-jJ-cRM" firstAttribute="centerX" secondItem="7r7-uy-XHC" secondAttribute="centerX" id="UzY-Zl-JvN"/>
+                                    <constraint firstItem="6Gk-iL-jQV" firstAttribute="top" secondItem="7r7-uy-XHC" secondAttribute="top" constant="15" id="Vpe-bZ-39U"/>
+                                    <constraint firstItem="NTC-jJ-cRM" firstAttribute="top" secondItem="6Gk-iL-jQV" secondAttribute="bottom" constant="10" id="cT9-I6-a7Y"/>
+                                    <constraint firstItem="NTC-jJ-cRM" firstAttribute="leading" secondItem="7r7-uy-XHC" secondAttribute="leading" constant="30" id="mln-8f-1Ou"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="22u-EA-9ja">
+                                <rect key="frame" x="30" y="424" width="315" height="213"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PhonemoQuiz คือเกมฝึกออกเสียงภาษาอังกฤษตามหลัก IPA พร้อมเล่นแล้ว ลุยยย" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="5kt-Te-EcN">
+                                        <rect key="frame" x="50" y="10" width="215" height="117"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="35" id="lMs-gH-NKG"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="SukhumvitSet-Text" family="Sukhumvit Set" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5vG-xY-j5k">
+                                        <rect key="frame" x="40" y="137" width="235" height="56"/>
+                                        <color key="backgroundColor" red="0.99080961942672729" green="0.70058828592300415" blue="0.38498902320861816" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="lessThanOrEqual" priority="750" constant="56" id="FHP-hQ-0j2"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="SukhumvitSet-Text" family="Sukhumvit Set" pointSize="17"/>
+                                        <state key="normal" title="เริ่มเกม">
+                                            <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="5kt-Te-EcN" firstAttribute="top" secondItem="22u-EA-9ja" secondAttribute="top" constant="10" id="6U7-aE-vbx"/>
+                                    <constraint firstAttribute="bottom" secondItem="5vG-xY-j5k" secondAttribute="bottom" constant="20" id="ETi-k8-TEP"/>
+                                    <constraint firstItem="5vG-xY-j5k" firstAttribute="top" secondItem="5kt-Te-EcN" secondAttribute="bottom" priority="750" constant="10" id="Lhb-8C-TaS"/>
+                                    <constraint firstItem="5kt-Te-EcN" firstAttribute="leading" secondItem="22u-EA-9ja" secondAttribute="leading" constant="50" id="b6z-kl-91O"/>
+                                    <constraint firstItem="5vG-xY-j5k" firstAttribute="leading" secondItem="22u-EA-9ja" secondAttribute="leading" constant="40" id="ipU-v2-dVK"/>
+                                    <constraint firstAttribute="trailing" secondItem="5vG-xY-j5k" secondAttribute="trailing" constant="40" id="msA-cC-NUD"/>
+                                    <constraint firstAttribute="trailing" secondItem="5kt-Te-EcN" secondAttribute="trailing" constant="50" id="pLD-jg-j5p"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="U7M-O9-MX7" firstAttribute="bottom" secondItem="22u-EA-9ja" secondAttribute="bottom" constant="30" id="2OM-4c-Hmj"/>
+                            <constraint firstItem="7r7-uy-XHC" firstAttribute="height" secondItem="Fi8-xD-mbI" secondAttribute="height" multiplier="0.45" id="B3D-oH-OZw"/>
+                            <constraint firstItem="7r7-uy-XHC" firstAttribute="leading" secondItem="U7M-O9-MX7" secondAttribute="leading" constant="30" id="BTi-JR-nXS"/>
+                            <constraint firstItem="22u-EA-9ja" firstAttribute="trailing" secondItem="7r7-uy-XHC" secondAttribute="trailing" id="D9k-RY-2zd"/>
+                            <constraint firstItem="22u-EA-9ja" firstAttribute="leading" secondItem="7r7-uy-XHC" secondAttribute="leading" id="HXB-kW-9sv"/>
+                            <constraint firstItem="7r7-uy-XHC" firstAttribute="top" secondItem="U7M-O9-MX7" secondAttribute="top" constant="30" id="P1I-ov-48T"/>
+                            <constraint firstItem="U7M-O9-MX7" firstAttribute="trailing" secondItem="7r7-uy-XHC" secondAttribute="trailing" constant="30" id="hfX-7i-48z"/>
+                            <constraint firstItem="22u-EA-9ja" firstAttribute="top" secondItem="7r7-uy-XHC" secondAttribute="bottom" constant="30" id="tRm-3r-SQv"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="U7M-O9-MX7"/>
                     </view>
                     <navigationItem key="navigationItem" title="Lobby" id="HUm-ui-rYi"/>
+                    <connections>
+                        <outlet property="highScoreCollectionView" destination="NTC-jJ-cRM" id="kTb-H6-502"/>
+                        <outlet property="highScoreWrapper" destination="7r7-uy-XHC" id="v7O-n4-UKP"/>
+                        <outlet property="startBtn" destination="5vG-xY-j5k" id="hDv-qc-6Fy"/>
+                        <outlet property="startGameWrapper" destination="22u-EA-9ja" id="LDZ-Ku-4Lo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m6d-Jw-19P" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1841" y="1180"/>
+            <point key="canvasLocation" x="1839.2" y="1178.8605697151424"/>
         </scene>
     </scenes>
     <resources>
