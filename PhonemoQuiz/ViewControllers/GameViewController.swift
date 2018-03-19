@@ -8,10 +8,16 @@
 
 import UIKit
 import AVFoundation
+import Speech
 
-class GameViewController: UIViewController {
+class GameViewController: UIViewController, SFSpeechRecognizerDelegate {
   
   //MARK:- Variables and IBOutlet
+  let audioEngine = AVAudioEngine()
+  let speechRecognizer: SFSpeechRecognizer? = SFSpeechRecognizer()
+  let request = SFSpeechAudioBufferRecognitionRequest()
+  var recognitionTask: SFSpeechRecognitionTask?
+  
   var micSound = Bundle.main.url(forResource: "mic", withExtension: "mp3")
   var audioPlayer = AVAudioPlayer()
   
@@ -50,8 +56,17 @@ class GameViewController: UIViewController {
   }
   
   
-  @IBAction fileprivate func recordSound(_ sender: UIButton) {
+  @IBAction fileprivate func recordSoundBtnTouch(_ sender: UIButton) {
     audioPlayer.play()
+    
+    micBtn.buttonAnimateSpring {
+      self.micBtn.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
+      self.micBtn.backgroundColor = .red
+      self.micBtn.isEnabled = false
+      self.micBtn.layer.cornerRadius = self.micBtn.frame.width / 2
+    }
+    
+    recordAndRecognizeSpeech()
   }
   
   fileprivate func setupAudio() {
@@ -68,6 +83,54 @@ class GameViewController: UIViewController {
     let statusBarView = UIView(frame: UIApplication.shared.statusBarFrame)
     statusBarView.backgroundColor = UIColor.orangePhonemo
     view.addSubview(statusBarView)
+  }
+  
+  //MARK: Record and Recognition
+  fileprivate func recordAndRecognizeSpeech() {
+    let node = audioEngine.inputNode
+    let recordingFormat = node.outputFormat(forBus: 0)
+    node.installTap(onBus: 0, bufferSize: 1024, format: recordingFormat) { (buffer, _) in
+      self.request.append(buffer)
+    }
+    audioEngine.prepare()
+    do {
+      try audioEngine.start()
+    } catch {
+      self.sendAlert(message: "Audio Engine ทำงานผิดพลาด")
+      return print(error)
+    }
+    
+    recognitionTask = speechRecognizer?.recognitionTask(with: request, resultHandler: { (result, error) in
+      if error != nil {
+        print(error ?? "")
+        return
+      }
+      
+      if let result = result {
+        let string = result.bestTranscription.formattedString
+        print(string)
+        self.cancelRecording()
+      }
+    })
+  }
+  
+  fileprivate func cancelRecording() {
+    request.endAudio()
+    audioEngine.stop()
+    audioEngine.inputNode.removeTap(onBus: 0)
+    recognitionTask?.cancel()
+    micBtn.buttonAnimateSpring {
+      self.micBtn.transform = .identity
+      self.micBtn.backgroundColor = UIColor.orangePhonemo
+      self.micBtn.isEnabled = true
+      self.micBtn.layer.cornerRadius = 15
+    }
+  }
+  
+  fileprivate func sendAlert(message: String) {
+    let alert = UIAlertController(title: "Speech Recognizer Error", message: message, preferredStyle: .alert)
+    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+    self.present(alert, animated: true, completion: nil)
   }
   
 }

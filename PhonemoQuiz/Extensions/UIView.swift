@@ -27,4 +27,15 @@ extension UIView {
     SVProgressHUD.setDefaultMaskType(.black)
     SVProgressHUD.show()
   }
+  
+  func buttonAnimateSpring(animation: @escaping () -> Void) {
+    UIView.animate(
+      withDuration: 0.76,
+      delay: 0,
+      usingSpringWithDamping: 0.5,
+      initialSpringVelocity: 1,
+      options: .curveEaseOut,
+      animations: animation
+    )
+  }
 }
