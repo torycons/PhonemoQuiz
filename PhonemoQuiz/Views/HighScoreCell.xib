@@ -32,7 +32,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thanapat  Sorralump" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="pKY-7b-FiA">
-                        <rect key="frame" x="81" y="28" width="135" height="24"/>
+                        <rect key="frame" x="79" y="28" width="135" height="24"/>
                         <constraints>
                             <constraint firstAttribute="width" relation="lessThanOrEqual" constant="135" id="fgt-KA-QDf"/>
                         </constraints>
@@ -47,7 +47,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ProfilePic" translatesAutoresizingMaskIntoConstraints="NO" id="yoU-KL-sU8">
-                        <rect key="frame" x="29" y="24" width="32" height="32"/>
+                        <rect key="frame" x="27" y="24" width="32" height="32"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="32" id="Kcg-RV-bYU"/>
                             <constraint firstAttribute="width" secondItem="yoU-KL-sU8" secondAttribute="height" multiplier="1:1" id="WXb-Ny-MOY"/>
@@ -57,7 +57,7 @@
                 </subviews>
             </view>
             <constraints>
-                <constraint firstItem="yoU-KL-sU8" firstAttribute="leading" secondItem="7ky-gp-YGh" secondAttribute="trailing" constant="20" id="79C-4g-l4k"/>
+                <constraint firstItem="yoU-KL-sU8" firstAttribute="leading" secondItem="7ky-gp-YGh" secondAttribute="trailing" constant="18" id="79C-4g-l4k"/>
                 <constraint firstItem="RUP-gS-foj" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="DKt-cL-QpI"/>
                 <constraint firstItem="7ky-gp-YGh" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Fce-Nf-kpT"/>
                 <constraint firstItem="yoU-KL-sU8" firstAttribute="bottom" secondItem="7ky-gp-YGh" secondAttribute="bottom" id="TD7-He-but"/>

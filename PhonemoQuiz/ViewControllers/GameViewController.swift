@@ -29,7 +29,6 @@ class GameViewController: UIViewController, SFSpeechRecognizerDelegate {
   fileprivate var audioPlayer = AVAudioPlayer()
   
   //MARK: UI Variables
-  @IBOutlet weak var textBox: UILabel!
   @IBOutlet fileprivate weak var scoreUser: UILabel!
   @IBOutlet fileprivate weak var question: UILabel!
   @IBOutlet fileprivate weak var micBtn: UIButton! {
@@ -116,14 +115,11 @@ class GameViewController: UIViewController, SFSpeechRecognizerDelegate {
         return
       }
       guard let result = result else { return }
-      
       if self.resultWords.count == 0 {
         let stringResult = result.bestTranscription.formattedString
-        self.textBox.text = stringResult
         self.resultWords.append(stringResult)
         self.stopRecording()
       }
-      
     })
   }
   
