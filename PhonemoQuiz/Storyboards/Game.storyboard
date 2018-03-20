@@ -218,28 +218,45 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view alpha="0.83999999999999997" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="esx-n0-sMv">
+                            <view alpha="0.83999999999999997" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="esx-n0-sMv">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="False" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="12N-ck-7xy">
-                                        <rect key="frame" x="158" y="323" width="40" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="NKP-Gm-kgj">
+                                <rect key="frame" x="0.0" y="153" width="375" height="360"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="360" id="9XD-XC-p5S"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="KLa-DE-Jdo">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="esx-n0-sMv" firstAttribute="trailing" secondItem="Bn0-dQ-VD1" secondAttribute="trailing" id="2Qj-2j-a6g"/>
+                            <constraint firstItem="NKP-Gm-kgj" firstAttribute="leading" secondItem="Bn0-dQ-VD1" secondAttribute="leading" id="LfY-7o-feY"/>
+                            <constraint firstItem="NKP-Gm-kgj" firstAttribute="centerX" secondItem="ZR5-zA-4tO" secondAttribute="centerX" id="U8a-Av-bqQ"/>
+                            <constraint firstItem="esx-n0-sMv" firstAttribute="top" secondItem="ZR5-zA-4tO" secondAttribute="top" id="Wef-Kk-51n"/>
+                            <constraint firstItem="NKP-Gm-kgj" firstAttribute="trailing" secondItem="Bn0-dQ-VD1" secondAttribute="trailing" id="bE4-NM-vSw"/>
+                            <constraint firstItem="NKP-Gm-kgj" firstAttribute="centerY" secondItem="ZR5-zA-4tO" secondAttribute="centerY" id="bM9-Wc-NJz"/>
+                            <constraint firstItem="esx-n0-sMv" firstAttribute="leading" secondItem="Bn0-dQ-VD1" secondAttribute="leading" id="h68-nW-cTV"/>
+                            <constraint firstItem="esx-n0-sMv" firstAttribute="bottom" secondItem="Bn0-dQ-VD1" secondAttribute="bottom" id="iaZ-yd-Nof"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Bn0-dQ-VD1"/>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="NKP-Gm-kgj" id="V2N-Iv-MUx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CHq-Xy-tlP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3804" y="1607"/>
+            <point key="canvasLocation" x="3804" y="1606.1469265367318"/>
         </scene>
     </scenes>
     <resources>

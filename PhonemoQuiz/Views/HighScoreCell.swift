@@ -13,9 +13,10 @@ class HighScoreCell: UICollectionViewCell {
   @IBOutlet fileprivate weak var numberPlayer: UILabel!
   @IBOutlet fileprivate weak var namePlayer: UILabel!
   @IBOutlet fileprivate weak var scorePlayer: UILabel!
-  @IBOutlet fileprivate weak var playerPicture: UIImageView! {
-    didSet {
-      playerPicture.layer.cornerRadius = playerPicture.frame.height/2
-    }
+  @IBOutlet fileprivate weak var playerPicture: UIImageView!
+  
+  override func awakeFromNib() {
+    super.awakeFromNib()
+    playerPicture.layer.cornerRadius = playerPicture.frame.height/2
   }
 }

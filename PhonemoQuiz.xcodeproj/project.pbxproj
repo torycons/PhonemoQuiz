@@ -14,6 +14,10 @@
 		D0535214205FACA100D27263 /* HighScoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0535212205FACA100D27263 /* HighScoreCell.swift */; };
 		D0535215205FACA100D27263 /* HighScoreCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0535213205FACA100D27263 /* HighScoreCell.xib */; };
 		D0735947205EC5F700F583F9 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0735946205EC5F700F583F9 /* UIView.swift */; };
+		D0798DA6206119AC00CCDF9D /* WrongCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0798DA4206119AC00CCDF9D /* WrongCell.swift */; };
+		D0798DA7206119AC00CCDF9D /* WrongCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0798DA5206119AC00CCDF9D /* WrongCell.xib */; };
+		D0798DAA2061251500CCDF9D /* SummaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0798DA82061251500CCDF9D /* SummaryCell.swift */; };
+		D0798DAB2061251500CCDF9D /* SummaryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0798DA92061251500CCDF9D /* SummaryCell.xib */; };
 		D089954F205FC43C00BAADA5 /* Game.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D089954E205FC43C00BAADA5 /* Game.storyboard */; };
 		D0899551205FC5AA00BAADA5 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0899550205FC5AA00BAADA5 /* GameViewController.swift */; };
 		D0899553205FE70400BAADA5 /* mic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D0899552205FE70400BAADA5 /* mic.mp3 */; };
@@ -41,6 +45,10 @@
 		D0535212205FACA100D27263 /* HighScoreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighScoreCell.swift; sourceTree = "<group>"; };
 		D0535213205FACA100D27263 /* HighScoreCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HighScoreCell.xib; sourceTree = "<group>"; };
 		D0735946205EC5F700F583F9 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		D0798DA4206119AC00CCDF9D /* WrongCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WrongCell.swift; sourceTree = "<group>"; };
+		D0798DA5206119AC00CCDF9D /* WrongCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WrongCell.xib; sourceTree = "<group>"; };
+		D0798DA82061251500CCDF9D /* SummaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryCell.swift; sourceTree = "<group>"; };
+		D0798DA92061251500CCDF9D /* SummaryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SummaryCell.xib; sourceTree = "<group>"; };
 		D089954E205FC43C00BAADA5 /* Game.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Game.storyboard; sourceTree = "<group>"; };
 		D0899550205FC5AA00BAADA5 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		D0899552205FE70400BAADA5 /* mic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = mic.mp3; sourceTree = "<group>"; };
@@ -99,6 +107,10 @@
 			children = (
 				D0535212205FACA100D27263 /* HighScoreCell.swift */,
 				D0535213205FACA100D27263 /* HighScoreCell.xib */,
+				D0798DA4206119AC00CCDF9D /* WrongCell.swift */,
+				D0798DA5206119AC00CCDF9D /* WrongCell.xib */,
+				D0798DA82061251500CCDF9D /* SummaryCell.swift */,
+				D0798DA92061251500CCDF9D /* SummaryCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -268,8 +280,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0899553205FE70400BAADA5 /* mic.mp3 in Resources */,
+				D0798DA7206119AC00CCDF9D /* WrongCell.xib in Resources */,
 				D0F57674205D50CB00ED72BE /* CaveatBrush-Regular.ttf in Resources */,
 				D0F57669205D45B200ED72BE /* LaunchScreen.storyboard in Resources */,
+				D0798DAB2061251500CCDF9D /* SummaryCell.xib in Resources */,
 				D0CED39F205E3D9800CE708A /* Profile.storyboard in Resources */,
 				D0F57671205D4DFA00ED72BE /* GoogleService-Info.plist in Resources */,
 				D0F57677205D542C00ED72BE /* SukhumvitSet.ttc in Resources */,
@@ -368,6 +382,8 @@
 				D0DCCEEC2060E47F00CB3103 /* CorrectViewController.swift in Sources */,
 				D0012607205D7CFB006CA6B7 /* ProfileViewController.swift in Sources */,
 				D0F5765F205D45B200ED72BE /* AppDelegate.swift in Sources */,
+				D0798DAA2061251500CCDF9D /* SummaryCell.swift in Sources */,
+				D0798DA6206119AC00CCDF9D /* WrongCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
