@@ -12,6 +12,7 @@ import FirebaseAuth
 
 class ProfileViewController: UIViewController {
   
+  //MARK:- IBOutlet and Variables
   @IBOutlet fileprivate weak var profileWrapper: UIView! {
     didSet {
       profileWrapper.layer.cornerRadius = 7
@@ -41,7 +42,7 @@ class ProfileViewController: UIViewController {
   
   //MARK:- Logout Functions
   @IBAction fileprivate func LogoutBtn(_ sender: UIBarButtonItem) {
-    let logoutAlert = UIAlertController(title: "ออกจากระบบ", message: "คุณต้องการออกจากระบบหรือไม่", preferredStyle: .alert)
+    let logoutAlert = UIAlertController(title: "ออกจากระบบ", message: "คุณต้องการออกจากระบบหรือไม่ (คะแนนจะไม่ถูกบันทึก)", preferredStyle: .alert)
     let logOutBtn = UIAlertAction(title: "ตกลง", style: .cancel) { (_) in self.logOut() }
     let cancleButton = UIAlertAction(title: "ยกเลิก", style: .default, handler: nil)
     logoutAlert.addAction(cancleButton)

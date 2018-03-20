@@ -19,6 +19,10 @@
 		D0899553205FE70400BAADA5 /* mic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D0899552205FE70400BAADA5 /* mic.mp3 */; };
 		D0CED39D205E3D5A00CE708A /* Lobby.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0CED39C205E3D5A00CE708A /* Lobby.storyboard */; };
 		D0CED39F205E3D9800CE708A /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0CED39E205E3D9800CE708A /* Profile.storyboard */; };
+		D0DCCEEC2060E47F00CB3103 /* CorrectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0DCCEEB2060E47F00CB3103 /* CorrectViewController.swift */; };
+		D0DCCEEE2060F6D100CB3103 /* correct.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D0DCCEED2060F6D100CB3103 /* correct.mp3 */; };
+		D0DCCEF02060FA1400CB3103 /* WrongViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0DCCEEF2060FA1400CB3103 /* WrongViewController.swift */; };
+		D0DCCEF22060FD7C00CB3103 /* wrong.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D0DCCEF12060FD7C00CB3103 /* wrong.mp3 */; };
 		D0F5765F205D45B200ED72BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F5765E205D45B200ED72BE /* AppDelegate.swift */; };
 		D0F57661205D45B200ED72BE /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F57660205D45B200ED72BE /* LogInViewController.swift */; };
 		D0F57664205D45B200ED72BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0F57662205D45B200ED72BE /* Main.storyboard */; };
@@ -43,6 +47,10 @@
 		D0CB6E5B205E5091005646D7 /* PhonemoQuiz.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PhonemoQuiz.entitlements; sourceTree = "<group>"; };
 		D0CED39C205E3D5A00CE708A /* Lobby.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Lobby.storyboard; sourceTree = "<group>"; };
 		D0CED39E205E3D9800CE708A /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		D0DCCEEB2060E47F00CB3103 /* CorrectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CorrectViewController.swift; sourceTree = "<group>"; };
+		D0DCCEED2060F6D100CB3103 /* correct.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = correct.mp3; sourceTree = "<group>"; };
+		D0DCCEEF2060FA1400CB3103 /* WrongViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WrongViewController.swift; sourceTree = "<group>"; };
+		D0DCCEF12060FD7C00CB3103 /* wrong.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = wrong.mp3; sourceTree = "<group>"; };
 		D0F5765B205D45B200ED72BE /* PhonemoQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhonemoQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0F5765E205D45B200ED72BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D0F57660205D45B200ED72BE /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
@@ -108,6 +116,8 @@
 			isa = PBXGroup;
 			children = (
 				D0899552205FE70400BAADA5 /* mic.mp3 */,
+				D0DCCEED2060F6D100CB3103 /* correct.mp3 */,
+				D0DCCEF12060FD7C00CB3103 /* wrong.mp3 */,
 			);
 			path = Sounds;
 			sourceTree = "<group>";
@@ -164,6 +174,8 @@
 				D0012604205D7A2F006CA6B7 /* LobbyViewController.swift */,
 				D0012606205D7CFB006CA6B7 /* ProfileViewController.swift */,
 				D0899550205FC5AA00BAADA5 /* GameViewController.swift */,
+				D0DCCEEB2060E47F00CB3103 /* CorrectViewController.swift */,
+				D0DCCEEF2060FA1400CB3103 /* WrongViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -263,9 +275,11 @@
 				D0F57677205D542C00ED72BE /* SukhumvitSet.ttc in Resources */,
 				D0F57666205D45B200ED72BE /* Assets.xcassets in Resources */,
 				D0CED39D205E3D5A00CE708A /* Lobby.storyboard in Resources */,
+				D0DCCEF22060FD7C00CB3103 /* wrong.mp3 in Resources */,
 				D0F57664205D45B200ED72BE /* Main.storyboard in Resources */,
 				D089954F205FC43C00BAADA5 /* Game.storyboard in Resources */,
 				D0535215205FACA100D27263 /* HighScoreCell.xib in Resources */,
+				D0DCCEEE2060F6D100CB3103 /* correct.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,8 +362,10 @@
 				D0535214205FACA100D27263 /* HighScoreCell.swift in Sources */,
 				D0735947205EC5F700F583F9 /* UIView.swift in Sources */,
 				D0012605205D7A2F006CA6B7 /* LobbyViewController.swift in Sources */,
+				D0DCCEF02060FA1400CB3103 /* WrongViewController.swift in Sources */,
 				D0F57661205D45B200ED72BE /* LogInViewController.swift in Sources */,
 				D00EC330205FEB6300E9C648 /* UIColor.swift in Sources */,
+				D0DCCEEC2060E47F00CB3103 /* CorrectViewController.swift in Sources */,
 				D0012607205D7CFB006CA6B7 /* ProfileViewController.swift in Sources */,
 				D0F5765F205D45B200ED72BE /* AppDelegate.swift in Sources */,
 			);

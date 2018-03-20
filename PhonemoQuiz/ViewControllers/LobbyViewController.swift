@@ -77,7 +77,7 @@ extension LobbyViewController: UICollectionViewDelegate, UICollectionViewDataSou
     case 414:
       return CGSize(width:  300, height: 43)
     case 375:
-      return CGSize(width: 260, height: 37)
+      return CGSize(width: 255, height: 37)
     case 320:
       return CGSize(width: 200, height: 35)
     default:

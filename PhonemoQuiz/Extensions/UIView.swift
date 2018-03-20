@@ -28,14 +28,15 @@ extension UIView {
     SVProgressHUD.show()
   }
   
-  func buttonAnimateSpring(animation: @escaping () -> Void) {
+  func buttonAnimateSpring(animation: @escaping () -> Void, completion: ((Bool) -> Void)?) {
     UIView.animate(
       withDuration: 0.76,
       delay: 0,
       usingSpringWithDamping: 0.5,
       initialSpringVelocity: 1,
       options: .curveEaseOut,
-      animations: animation
+      animations: animation,
+      completion: completion
     )
   }
 }
