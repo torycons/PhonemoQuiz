@@ -10,7 +10,7 @@ import UIKit
 
 class WrongViewController: UIViewController, SwipeCollectionViewDelegate, DismissViewDelegate {
 
-  var result: String?
+  var score: Int?
   weak var delegate: DismissViewDelegate?
   fileprivate let scoreId = "score"
   fileprivate let summaryId = "summary"
@@ -20,7 +20,6 @@ class WrongViewController: UIViewController, SwipeCollectionViewDelegate, Dismis
     super.viewDidLoad()
     
     setupCollectionView()
-    print(result)
   }
   
   fileprivate func setupCollectionView() {
@@ -58,6 +57,7 @@ extension WrongViewController: UICollectionViewDelegate, UICollectionViewDataSou
     case 1:
       let summaryCell = collectionView.dequeueReusableCell(withReuseIdentifier: summaryId, for: indexPath) as! SummaryCell
       summaryCell.delegate = self
+      summaryCell.score = self.score
       return summaryCell
     default:
       let cell = UICollectionViewCell()

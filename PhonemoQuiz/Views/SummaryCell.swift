@@ -10,7 +10,15 @@ import UIKit
 
 class SummaryCell: UICollectionViewCell {
   
+  var score: Int? {
+    didSet {
+      guard let score = score else { return }
+      userScore.text = "\(score)"
+    }
+  }
+  
   @IBOutlet fileprivate weak var backToLobby: UIButton!
+  @IBOutlet weak var userScore: UILabel!
   weak var delegate: DismissViewDelegate?
   
   override func awakeFromNib() {

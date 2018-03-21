@@ -99,6 +99,7 @@
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <connections>
                 <outlet property="backToLobby" destination="5o5-ao-BVt" id="KnM-v3-YL9"/>
+                <outlet property="userScore" destination="YOb-Zv-lc3" id="seC-AV-Krb"/>
             </connections>
         </collectionViewCell>
     </objects>

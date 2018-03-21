@@ -21,6 +21,11 @@ class GameViewController: UIViewController, SFSpeechRecognizerDelegate, DismissV
   
   //MARK: Game Variables
   fileprivate var resultWords = [String]()
+  fileprivate var score = 0 {
+    didSet {
+      scoreUser.text = "Score: \(score)"
+    }
+  }
   
   //MARK: Effect Sound Variables
   fileprivate let micSound = Bundle.main.url(forResource: "mic", withExtension: "mp3")
@@ -31,22 +36,15 @@ class GameViewController: UIViewController, SFSpeechRecognizerDelegate, DismissV
   //MARK: UI Variables
   @IBOutlet fileprivate weak var scoreUser: UILabel!
   @IBOutlet fileprivate weak var question: UILabel!
-  @IBOutlet fileprivate weak var micBtn: UIButton! {
-    didSet {
-      micBtn.layer.cornerRadius = 15
-    }
-  }
-  @IBOutlet fileprivate weak var profilePic: UIImageView! {
-    didSet {
-      profilePic.layer.cornerRadius = profilePic.frame.height/2
-    }
-  }
+  @IBOutlet fileprivate weak var micBtn: UIButton!
+  @IBOutlet fileprivate weak var profilePic: UIImageView!
   
   //MARK:- Life Cycle
   override func viewDidLoad() {
     super.viewDidLoad()
     
     setupStatusBar()
+    setupUI()
   }
   
   //MARK:- IBActions
@@ -94,6 +92,11 @@ class GameViewController: UIViewController, SFSpeechRecognizerDelegate, DismissV
     let statusBarView = UIView(frame: UIApplication.shared.statusBarFrame)
     statusBarView.backgroundColor = UIColor.orangePhonemo
     view.addSubview(statusBarView)
+  }
+  
+  fileprivate func setupUI() {
+    micBtn.layer.cornerRadius = 15
+    profilePic.layer.cornerRadius = profilePic.frame.height/2
   }
   
   //MARK: Record and Recognition
@@ -146,6 +149,7 @@ class GameViewController: UIViewController, SFSpeechRecognizerDelegate, DismissV
   //MARK:- Check Recording Result and Push new ViewController
   fileprivate func checkRecordingResult() {
     if !resultWords[0].isEmpty && resultWords[0] == "Hi" {
+      score += 50
       pushModal(type: .correct, word: "Hi")
     } else {
       pushModal(type: .wrong, word: "Good")
@@ -166,8 +170,8 @@ class GameViewController: UIViewController, SFSpeechRecognizerDelegate, DismissV
     } else if type == .wrong {
       setupAudio(sound: wrongSound)
       let viewController = storyboard?.instantiateViewController(withIdentifier: "wrong") as! WrongViewController
-      viewController.result = word
       viewController.delegate = self
+      viewController.score = self.score
       presentVC(viewController: viewController)
     }
   }
