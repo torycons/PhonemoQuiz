@@ -46,16 +46,19 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="PL0-oT-sMF">
-                                <rect key="frame" x="56.5" y="60" width="140.5" height="140"/>
+                                <rect key="frame" x="26.5" y="60" width="200" height="140"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="คะแนนที่ได้ทั้งหมด" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rXi-zR-iW8">
-                                        <rect key="frame" x="0.0" y="0.0" width="140.5" height="32"/>
+                                        <rect key="frame" x="30" y="0.0" width="140.5" height="32"/>
                                         <fontDescription key="fontDescription" name="SukhumvitSet-Text" family="Sukhumvit Set" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="500" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YOb-Zv-lc3">
-                                        <rect key="frame" x="9" y="37" width="122.5" height="103"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="500" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="YOb-Zv-lc3">
+                                        <rect key="frame" x="0.0" y="37" width="200" height="103"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="Ugz-EA-fQo"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="SukhumvitSet-Text" family="Sukhumvit Set" pointSize="72"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>

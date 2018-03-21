@@ -48,7 +48,6 @@ class LobbyViewController: UIViewController {
     highScoreCollectionView.register(UINib(nibName: "HighScoreCell", bundle: nil), forCellWithReuseIdentifier: cellId)
   }
   
-  @IBAction func unwindToLobby(segue: UIStoryboardSegue) { }
 }
 
 extension LobbyViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -65,11 +64,12 @@ extension LobbyViewController: UICollectionViewDelegate, UICollectionViewDataSou
   
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
     let screenSize = UIScreen.main.bounds.size.width
+    let screenHeight = UIScreen.main.bounds.size.height
     switch(screenSize){
     case 414:
       return CGSize(width:  300, height: 43)
     case 375:
-      return CGSize(width: 255, height: 37)
+      return screenHeight == 812 ? CGSize(width: 255, height: 50) : CGSize(width: 255, height: 37)
     case 320:
       return CGSize(width: 200, height: 35)
     default:
@@ -78,6 +78,4 @@ extension LobbyViewController: UICollectionViewDelegate, UICollectionViewDataSou
   }
   
 }
-
-
 

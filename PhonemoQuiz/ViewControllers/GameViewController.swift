@@ -49,7 +49,7 @@ class GameViewController: UIViewController, SFSpeechRecognizerDelegate, DismissV
   
   //MARK:- IBActions
   @IBAction fileprivate func quitGame(_ sender: UIButton) {
-    let alert = UIAlertController(title: "ออกจากเกม", message: "คุณต้องการออกจากเกมหรือไม่", preferredStyle: .alert)
+    let alert = UIAlertController(title: "ออกจากเกม", message: "คุณต้องการออกจากเกมหรือไม่  (คะแนนจะไม่ถูกบันทึก)", preferredStyle: .alert)
     let yesBtn = UIAlertAction(title: "ใช่", style: .cancel) { (_) in self.dismiss(animated: true, completion: nil) }
     let noBtn = UIAlertAction(title: "ไม่", style: .default, handler: nil)
     alert.addAction(yesBtn)
