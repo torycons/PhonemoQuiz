@@ -13,24 +13,9 @@ class LobbyViewController: UIViewController {
   
   //MARK:- IBOutlet
   @IBOutlet weak var highScoreCollectionView: UICollectionView!
-  
-  @IBOutlet weak var highScoreWrapper: UIView! {
-    didSet {
-      highScoreWrapper.layer.cornerRadius = 7
-    }
-  }
-  
-  @IBOutlet weak var startGameWrapper: UIView! {
-    didSet {
-      startGameWrapper.layer.cornerRadius = 7
-    }
-  }
-  
-  @IBOutlet weak var startBtn: UIButton! {
-    didSet {
-      startBtn.layer.cornerRadius = 5
-    }
-  }
+  @IBOutlet weak var highScoreWrapper: UIView!
+  @IBOutlet weak var startGameWrapper: UIView!
+  @IBOutlet weak var startBtn: UIButton!
   
   //MARK:- Variables
   fileprivate let cellId = "CellID"
@@ -40,6 +25,7 @@ class LobbyViewController: UIViewController {
     super.viewDidLoad()
     
     setupCollectionView()
+    setupUI()
   }
   
   override func viewDidLayoutSubviews() {
@@ -49,6 +35,12 @@ class LobbyViewController: UIViewController {
   }
   
   //MARK:- Setup Functions
+  fileprivate func setupUI() {
+    highScoreWrapper.layer.cornerRadius = 7
+    startGameWrapper.layer.cornerRadius = 7
+    startBtn.layer.cornerRadius = 5
+  }
+  
   fileprivate func setupCollectionView() {
     highScoreCollectionView.delegate = self
     highScoreCollectionView.dataSource = self
@@ -56,7 +48,7 @@ class LobbyViewController: UIViewController {
     highScoreCollectionView.register(UINib(nibName: "HighScoreCell", bundle: nil), forCellWithReuseIdentifier: cellId)
   }
   
-  
+  @IBAction func unwindToLobby(segue: UIStoryboardSegue) { }
 }
 
 extension LobbyViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {

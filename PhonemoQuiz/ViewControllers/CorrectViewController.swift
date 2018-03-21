@@ -12,25 +12,19 @@ class CorrectViewController: UIViewController {
   
   var result: String?
   
-  @IBOutlet weak var modalWrapper: UIView! {
-    didSet {
-      modalWrapper.layer.cornerRadius = 10
-    }
-  }
-  @IBOutlet weak var nextBtn: UIButton! {
-    didSet {
-      nextBtn.layer.cornerRadius = 5
-    }
-  }
-  @IBOutlet weak var listenBtn: UIButton! {
-    didSet {
-      listenBtn.layer.cornerRadius = 5
-    }
-  }
+  @IBOutlet weak var modalWrapper: UIView!
+  @IBOutlet weak var nextBtn: UIButton!
+  @IBOutlet weak var listenBtn: UIButton!
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    print(result)
+    setupUI()
+  }
+  
+  fileprivate func setupUI() {
+    modalWrapper.layer.cornerRadius = 10
+    nextBtn.layer.cornerRadius = 5
+    listenBtn.layer.cornerRadius = 5
   }
   
   @IBAction func nextQuestion(_ sender: UIButton) {

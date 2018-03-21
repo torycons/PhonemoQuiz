@@ -10,9 +10,21 @@ import UIKit
 
 class SummaryCell: UICollectionViewCell {
   
+  @IBOutlet fileprivate weak var backToLobby: UIButton!
+  weak var delegate: DismissViewDelegate?
+  
   override func awakeFromNib() {
     super.awakeFromNib()
+    setupUI()
+  }
+  
+  fileprivate func setupUI() {
     self.layer.cornerRadius = 10
+    backToLobby.layer.cornerRadius = 5
+  }
+  
+  @IBAction func backToLobby(_ sender: UIButton) {
+    self.delegate?.viewDismiss()
   }
   
 }

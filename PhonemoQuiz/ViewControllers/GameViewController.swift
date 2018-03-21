@@ -10,7 +10,7 @@ import UIKit
 import AVFoundation
 import Speech
 
-class GameViewController: UIViewController, SFSpeechRecognizerDelegate {
+class GameViewController: UIViewController, SFSpeechRecognizerDelegate, DismissViewDelegate {
   
   //MARK:- Variables and IBOutlet
   //MARK: Speech Recognition Variables
@@ -72,6 +72,11 @@ class GameViewController: UIViewController, SFSpeechRecognizerDelegate {
     }, completion: nil)
     
     recordAndRecognizeSpeech()
+  }
+  
+  //MARK:- Delegate Functions
+  func viewDismiss() {
+    self.dismiss(animated: true, completion: nil)
   }
   
   //MARK:- Setup Functions
@@ -162,6 +167,7 @@ class GameViewController: UIViewController, SFSpeechRecognizerDelegate {
       setupAudio(sound: wrongSound)
       let viewController = storyboard?.instantiateViewController(withIdentifier: "wrong") as! WrongViewController
       viewController.result = word
+      viewController.delegate = self
       presentVC(viewController: viewController)
     }
   }

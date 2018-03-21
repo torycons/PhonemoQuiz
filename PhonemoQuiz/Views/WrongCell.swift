@@ -13,6 +13,7 @@ class WrongCell: UICollectionViewCell {
   @IBOutlet weak var listenBtn: UIButton!
   @IBOutlet weak var summaryBtn: UIButton!
   @IBOutlet weak var background: UIView!
+  var delegate: SwipeCollectionViewDelegate?
   
   override func awakeFromNib() {
     super.awakeFromNib()
@@ -22,8 +23,6 @@ class WrongCell: UICollectionViewCell {
   }
   
   @IBAction func goToSummary(_ sender: UIButton) {
-    
+    self.delegate?.swipeToNext()
   }
-  
-  
 }

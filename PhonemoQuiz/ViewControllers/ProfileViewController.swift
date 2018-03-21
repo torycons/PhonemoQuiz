@@ -13,21 +13,13 @@ import FirebaseAuth
 class ProfileViewController: UIViewController {
   
   //MARK:- IBOutlet and Variables
-  @IBOutlet fileprivate weak var profileWrapper: UIView! {
-    didSet {
-      profileWrapper.layer.cornerRadius = 7
-    }
-  }
-  
-  @IBOutlet fileprivate weak var profileImage: UIImageView! {
-    didSet {
-      profileImage.layer.cornerRadius = profileImage.frame.height/2
-    }
-  }
+  @IBOutlet fileprivate weak var profileWrapper: UIView!
+  @IBOutlet fileprivate weak var profileImage: UIImageView!
   
   //MARK:- Life Cycle
   override func viewDidLoad() {
     super.viewDidLoad()
+    setupUI()
   }
   
   override func viewDidLayoutSubviews() {
@@ -35,7 +27,12 @@ class ProfileViewController: UIViewController {
     setupView()
   }
   
-  //MARK:- Setup View
+  //MARK:- Setup Functions
+  fileprivate func setupUI() {
+    profileWrapper.layer.cornerRadius = 7
+    profileImage.layer.cornerRadius = profileImage.frame.height/2
+  }
+  
   fileprivate func setupView() {
     view.addShadowForRoundedButton(view: view, wrapper: profileWrapper, cornerRadius: 5)
   }
