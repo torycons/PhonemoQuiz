@@ -67,9 +67,10 @@ class GameViewController: UIViewController, SFSpeechRecognizerDelegate, DismissV
       self.micBtn.backgroundColor = .red
       self.micBtn.isEnabled = false
       self.micBtn.layer.cornerRadius = self.micBtn.frame.width / 2
-    }, completion: nil)
+    },completion: { (_) in
+      self.recordAndRecognizeSpeech()
+    })
     
-    recordAndRecognizeSpeech()
   }
   
   //MARK:- Delegate Functions

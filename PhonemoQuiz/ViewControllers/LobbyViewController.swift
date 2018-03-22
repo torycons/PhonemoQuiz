@@ -51,7 +51,6 @@ class LobbyViewController: UIViewController {
 }
 
 extension LobbyViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-  //MARK:- CollectionView DataSource
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     return 5
   }
