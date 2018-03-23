@@ -32,6 +32,9 @@
 		D0F193862064E6B400D7C437 /* Speech.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F193852064E6B400D7C437 /* Speech.swift */; };
 		D0F193892065219800D7C437 /* OxfordKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F193882065219800D7C437 /* OxfordKeys.swift */; };
 		D0F1938C2065256E00D7C437 /* Words.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F1938B2065256E00D7C437 /* Words.swift */; };
+		D0F1938E206528D900D7C437 /* WordGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F1938D206528D900D7C437 /* WordGenerator.swift */; };
+		D0F193912065432100D7C437 /* ChallengeWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F193902065432100D7C437 /* ChallengeWord.swift */; };
+		D0F193942065510C00D7C437 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F193932065510C00D7C437 /* APIService.swift */; };
 		D0F5765F205D45B200ED72BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F5765E205D45B200ED72BE /* AppDelegate.swift */; };
 		D0F57661205D45B200ED72BE /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F57660205D45B200ED72BE /* LogInViewController.swift */; };
 		D0F57664205D45B200ED72BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0F57662205D45B200ED72BE /* Main.storyboard */; };
@@ -69,6 +72,9 @@
 		D0F193852064E6B400D7C437 /* Speech.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Speech.swift; sourceTree = "<group>"; };
 		D0F193882065219800D7C437 /* OxfordKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OxfordKeys.swift; sourceTree = "<group>"; };
 		D0F1938B2065256E00D7C437 /* Words.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Words.swift; sourceTree = "<group>"; };
+		D0F1938D206528D900D7C437 /* WordGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordGenerator.swift; sourceTree = "<group>"; };
+		D0F193902065432100D7C437 /* ChallengeWord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeWord.swift; sourceTree = "<group>"; };
+		D0F193932065510C00D7C437 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		D0F5765B205D45B200ED72BE /* PhonemoQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhonemoQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0F5765E205D45B200ED72BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D0F57660205D45B200ED72BE /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
@@ -140,6 +146,7 @@
 				D00EC32F205FEB6300E9C648 /* UIColor.swift */,
 				D0F193832064E61800D7C437 /* Audio.swift */,
 				D0F193852064E6B400D7C437 /* Speech.swift */,
+				D0F1938D206528D900D7C437 /* WordGenerator.swift */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -170,6 +177,33 @@
 			path = Data;
 			sourceTree = "<group>";
 		};
+		D0F1938F206542E100D7C437 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D0F193902065432100D7C437 /* ChallengeWord.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D0F193922065510200D7C437 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				D0F193932065510C00D7C437 /* APIService.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		D0F193952065527A00D7C437 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				D0F57676205D523300ED72BE /* Fonts */,
+				D0F193872065218400D7C437 /* Keys */,
+				D0F1938A2065255C00D7C437 /* Data */,
+				D0899554205FE72A00BAADA5 /* Sounds */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		D0F57652205D45B200ED72BE = {
 			isa = PBXGroup;
 			children = (
@@ -191,17 +225,16 @@
 		D0F5765D205D45B200ED72BE /* PhonemoQuiz */ = {
 			isa = PBXGroup;
 			children = (
-				D0F1938A2065255C00D7C437 /* Data */,
-				D0F193872065218400D7C437 /* Keys */,
+				D0F193952065527A00D7C437 /* Utilities */,
+				D0F193922065510200D7C437 /* API */,
+				D0F1938F206542E100D7C437 /* Models */,
 				D0038CF820624E8400D3FE22 /* Protocols */,
-				D0899554205FE72A00BAADA5 /* Sounds */,
 				D0535211205FAC8000D27263 /* Views */,
 				D0735945205EC5E000F583F9 /* Library */,
 				D0CB6E5B205E5091005646D7 /* PhonemoQuiz.entitlements */,
 				D0F5767B205D72CF00ED72BE /* Storyboards */,
 				D0F5767A205D71DB00ED72BE /* SupportingFiles */,
 				D0F57679205D71CB00ED72BE /* ViewControllers */,
-				D0F57676205D523300ED72BE /* Fonts */,
 				D0F57665205D45B200ED72BE /* Assets.xcassets */,
 				D0F5766A205D45B200ED72BE /* Info.plist */,
 				D0F57670205D4DFA00ED72BE /* GoogleService-Info.plist */,
@@ -419,15 +452,18 @@
 				D0735947205EC5F700F583F9 /* UIView.swift in Sources */,
 				D0012605205D7A2F006CA6B7 /* LobbyViewController.swift in Sources */,
 				D0DCCEF02060FA1400CB3103 /* WrongViewController.swift in Sources */,
+				D0F193942065510C00D7C437 /* APIService.swift in Sources */,
 				D0F57661205D45B200ED72BE /* LogInViewController.swift in Sources */,
 				D0F193842064E61800D7C437 /* Audio.swift in Sources */,
 				D00EC330205FEB6300E9C648 /* UIColor.swift in Sources */,
+				D0F193912065432100D7C437 /* ChallengeWord.swift in Sources */,
 				D0DCCEEC2060E47F00CB3103 /* CorrectViewController.swift in Sources */,
 				D0F193892065219800D7C437 /* OxfordKeys.swift in Sources */,
 				D0F193862064E6B400D7C437 /* Speech.swift in Sources */,
 				D0012607205D7CFB006CA6B7 /* ProfileViewController.swift in Sources */,
 				D0038CFA20624EAD00D3FE22 /* Protocols.swift in Sources */,
 				D0F5765F205D45B200ED72BE /* AppDelegate.swift in Sources */,
+				D0F1938E206528D900D7C437 /* WordGenerator.swift in Sources */,
 				D0798DAA2061251500CCDF9D /* SummaryCell.swift in Sources */,
 				D0798DA6206119AC00CCDF9D /* WrongCell.swift in Sources */,
 			);
