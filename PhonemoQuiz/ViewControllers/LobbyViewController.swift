@@ -66,7 +66,7 @@ extension LobbyViewController: UICollectionViewDelegate, UICollectionViewDataSou
     let screenHeight = UIScreen.main.bounds.size.height
     switch(screenSize){
     case 414:
-      return CGSize(width:  300, height: 43)
+      return CGSize(width:  294, height: 43)
     case 375:
       return screenHeight == 812 ? CGSize(width: 255, height: 50) : CGSize(width: 255, height: 37)
     case 320:

@@ -43,7 +43,7 @@ class GameViewController: UIViewController, SFSpeechRecognizerDelegate, DismissV
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    setupStatusBar()
+    view.setupStatusBar(view: view)
     setupUI()
   }
   
@@ -59,9 +59,7 @@ class GameViewController: UIViewController, SFSpeechRecognizerDelegate, DismissV
   }
   
   @IBAction fileprivate func recordSoundBtnTouch(_ sender: UIButton) {
-    setupAudio(sound: micSound)
-    audioPlayer.play()
-    
+    setupAudio(audioPlayer: &audioPlayer, sound: micSound).play()
     micBtn.buttonAnimateSpring(animation: {
       self.micBtn.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
       self.micBtn.backgroundColor = .red
@@ -70,7 +68,6 @@ class GameViewController: UIViewController, SFSpeechRecognizerDelegate, DismissV
     },completion: { (_) in
       self.recordAndRecognizeSpeech()
     })
-    
   }
   
   //MARK:- Delegate Functions
@@ -79,71 +76,43 @@ class GameViewController: UIViewController, SFSpeechRecognizerDelegate, DismissV
   }
   
   //MARK:- Setup Functions
-  fileprivate func setupAudio(sound: URL?) {
-    guard let sound = sound else { return }
-    do {
-      audioPlayer = try AVAudioPlayer(contentsOf: sound)
-      audioPlayer.prepareToPlay()
-    } catch {
-      print("Error: Can't play button sound")
-    }
-  }
-  
-  fileprivate func setupStatusBar() {
-    let statusBarView = UIView(frame: UIApplication.shared.statusBarFrame)
-    statusBarView.backgroundColor = UIColor.orangePhonemo
-    view.addSubview(statusBarView)
-  }
-  
   fileprivate func setupUI() {
     micBtn.layer.cornerRadius = 15
     profilePic.layer.cornerRadius = profilePic.frame.height/2
   }
   
-  //MARK: Record and Recognition
-  fileprivate func recordAndRecognizeSpeech() {
-    request = SFSpeechAudioBufferRecognitionRequest()
-    guard let request = request else { return }
-    let node = audioEngine.inputNode
-    let recordingFormat = node.outputFormat(forBus: 0)
-    node.installTap(onBus: 0, bufferSize: 1024, format: recordingFormat) { (buffer, _) in
-      request.append(buffer)
-    }
-    audioEngine.prepare()
-    do {
-      try audioEngine.start()
-      self.resultWords = []
-    } catch {
-      self.sendAlert(message: "Audio Engine ทำงานผิดพลาด")
-      return print(error)
-    }
-    
-    recognitionTask = speechRecognizer?.recognitionTask(with: request, resultHandler: { (result, error) in
-      if error != nil {
-        print(error ?? "")
-        return
-      }
-      guard let result = result else { return }
-      if self.resultWords.count == 0 {
-        let stringResult = result.bestTranscription.formattedString
-        self.resultWords.append(stringResult)
-        self.stopRecording()
-      }
-    })
-  }
-  
-  fileprivate func stopRecording() {
-    request?.endAudio()
-    audioEngine.stop()
-    audioEngine.inputNode.removeTap(onBus: 0)
-    recognitionTask?.cancel()
-    micBtn.buttonAnimateSpring(animation: {
+  fileprivate func btnAnimBack() {
+    self.micBtn.buttonAnimateSpring(animation: {
       self.micBtn.transform = .identity
       self.micBtn.backgroundColor = UIColor.orangePhonemo
       self.micBtn.isEnabled = true
       self.micBtn.layer.cornerRadius = 15
     }) { (_) in
       self.checkRecordingResult()
+    }
+  }
+  
+  //MARK: Record and Recognition
+  fileprivate func recordAndRecognizeSpeech() {
+    recordSpeech(request: &request, audioEngine: audioEngine) { (audioEngine, request)  in
+      do {
+        try audioEngine.start()
+        self.resultWords = []
+      } catch {
+        self.sendAlert(message: "Audio Engine ทำงานผิดพลาด")
+        return print(error)
+      }
+      
+      recognitionTask(recognitionTask: &recognitionTask, speechRecognizer: speechRecognizer, request: request, completion: { (result) in
+        guard let result = result else { return }
+        if self.resultWords.count == 0 {
+          let stringResult = result.bestTranscription.formattedString
+          self.resultWords.append(stringResult)
+          self.stopRecording(request: request, audioEngine: audioEngine, recognitionTask: &self.recognitionTask, completion: {
+            self.btnAnimBack()
+          })
+        }
+      })
     }
   }
   
@@ -164,20 +133,18 @@ class GameViewController: UIViewController, SFSpeechRecognizerDelegate, DismissV
   
   fileprivate func pushModal(type: typeModal, word: String) {
     if type == .correct {
-      setupAudio(sound: correctSound)
       let viewController = storyboard?.instantiateViewController(withIdentifier: "correct") as! CorrectViewController
       viewController.result = word
-      presentVC(viewController: viewController)
+      presentVC(viewController: viewController, audioPlayer: setupAudio(audioPlayer: &audioPlayer, sound: correctSound))
     } else if type == .wrong {
-      setupAudio(sound: wrongSound)
       let viewController = storyboard?.instantiateViewController(withIdentifier: "wrong") as! WrongViewController
       viewController.delegate = self
       viewController.score = self.score
-      presentVC(viewController: viewController)
+      presentVC(viewController: viewController, audioPlayer: setupAudio(audioPlayer: &audioPlayer, sound: wrongSound))
     }
   }
   
-  fileprivate func presentVC(viewController: UIViewController) {
+  fileprivate func presentVC(viewController: UIViewController, audioPlayer: AVAudioPlayer) {
     audioPlayer.play()
     viewController.modalPresentationStyle = .overCurrentContext
     present(viewController, animated: false, completion: nil)
@@ -189,5 +156,4 @@ class GameViewController: UIViewController, SFSpeechRecognizerDelegate, DismissV
     alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
     self.present(alert, animated: true, completion: nil)
   }
-  
 }

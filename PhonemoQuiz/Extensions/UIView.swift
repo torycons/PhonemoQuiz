@@ -39,4 +39,10 @@ extension UIView {
       completion: completion
     )
   }
+  
+  func setupStatusBar(view: UIView) {
+    let statusBarView = UIView(frame: UIApplication.shared.statusBarFrame)
+    statusBarView.backgroundColor = UIColor.orangePhonemo
+    view.addSubview(statusBarView)
+  }
 }
