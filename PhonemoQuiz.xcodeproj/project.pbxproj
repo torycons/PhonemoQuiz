@@ -35,6 +35,7 @@
 		D0F1938E206528D900D7C437 /* WordGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F1938D206528D900D7C437 /* WordGenerator.swift */; };
 		D0F193912065432100D7C437 /* ChallengeWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F193902065432100D7C437 /* ChallengeWord.swift */; };
 		D0F193942065510C00D7C437 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F193932065510C00D7C437 /* APIService.swift */; };
+		D0F1939720655C3D00D7C437 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F1939620655C3D00D7C437 /* Alert.swift */; };
 		D0F5765F205D45B200ED72BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F5765E205D45B200ED72BE /* AppDelegate.swift */; };
 		D0F57661205D45B200ED72BE /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F57660205D45B200ED72BE /* LogInViewController.swift */; };
 		D0F57664205D45B200ED72BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0F57662205D45B200ED72BE /* Main.storyboard */; };
@@ -75,6 +76,7 @@
 		D0F1938D206528D900D7C437 /* WordGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordGenerator.swift; sourceTree = "<group>"; };
 		D0F193902065432100D7C437 /* ChallengeWord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeWord.swift; sourceTree = "<group>"; };
 		D0F193932065510C00D7C437 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		D0F1939620655C3D00D7C437 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		D0F5765B205D45B200ED72BE /* PhonemoQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhonemoQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0F5765E205D45B200ED72BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D0F57660205D45B200ED72BE /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
@@ -142,11 +144,10 @@
 		D0735945205EC5E000F583F9 /* Library */ = {
 			isa = PBXGroup;
 			children = (
-				D0735946205EC5F700F583F9 /* UIView.swift */,
-				D00EC32F205FEB6300E9C648 /* UIColor.swift */,
 				D0F193832064E61800D7C437 /* Audio.swift */,
 				D0F193852064E6B400D7C437 /* Speech.swift */,
 				D0F1938D206528D900D7C437 /* WordGenerator.swift */,
+				D0F1939620655C3D00D7C437 /* Alert.swift */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -204,6 +205,15 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
+		D0F19398206560FC00D7C437 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				D0735946205EC5F700F583F9 /* UIView.swift */,
+				D00EC32F205FEB6300E9C648 /* UIColor.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		D0F57652205D45B200ED72BE = {
 			isa = PBXGroup;
 			children = (
@@ -225,6 +235,7 @@
 		D0F5765D205D45B200ED72BE /* PhonemoQuiz */ = {
 			isa = PBXGroup;
 			children = (
+				D0F19398206560FC00D7C437 /* Extension */,
 				D0F193952065527A00D7C437 /* Utilities */,
 				D0F193922065510200D7C437 /* API */,
 				D0F1938F206542E100D7C437 /* Models */,
@@ -452,6 +463,7 @@
 				D0735947205EC5F700F583F9 /* UIView.swift in Sources */,
 				D0012605205D7A2F006CA6B7 /* LobbyViewController.swift in Sources */,
 				D0DCCEF02060FA1400CB3103 /* WrongViewController.swift in Sources */,
+				D0F1939720655C3D00D7C437 /* Alert.swift in Sources */,
 				D0F193942065510C00D7C437 /* APIService.swift in Sources */,
 				D0F57661205D45B200ED72BE /* LogInViewController.swift in Sources */,
 				D0F193842064E61800D7C437 /* Audio.swift in Sources */,

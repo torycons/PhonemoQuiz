@@ -92,7 +92,7 @@
                     <connections>
                         <outlet property="micBtn" destination="fAt-Kb-ZUT" id="OJQ-Aw-NUL"/>
                         <outlet property="profilePic" destination="PJj-nj-Xk7" id="xBH-xZ-tbr"/>
-                        <outlet property="question" destination="K15-DV-vbB" id="a1e-aM-aAr"/>
+                        <outlet property="questionLabel" destination="K15-DV-vbB" id="a1e-aM-aAr"/>
                         <outlet property="scoreUser" destination="HY9-tp-DUr" id="IeS-yz-10i"/>
                     </connections>
                 </viewController>
@@ -136,16 +136,16 @@
                                                 </constraints>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="25S-YC-RZc">
-                                                <rect key="frame" x="9" y="65" width="197" height="111"/>
+                                                <rect key="frame" x="9" y="65" width="197" height="105"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bird  / bɜːrd/" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JBG-GQ-9mc">
-                                                        <rect key="frame" x="0.0" y="0.0" width="197" height="48"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="197" height="42"/>
                                                         <fontDescription key="fontDescription" name="SukhumvitSet-Text" family="Sukhumvit Set" pointSize="36"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="haV-dA-grJ">
-                                                        <rect key="frame" x="52.5" y="68" width="92" height="43"/>
+                                                        <rect key="frame" x="52.5" y="62" width="92" height="43"/>
                                                         <color key="backgroundColor" red="1" green="0.66339254379272461" blue="0.28744211792945862" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="92" id="d9L-07-jOa"/>
@@ -156,7 +156,7 @@
                                                 </subviews>
                                             </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bs2-ch-7Zy">
-                                                <rect key="frame" x="0.0" y="186" width="215" height="50"/>
+                                                <rect key="frame" x="0.0" y="180" width="215" height="56"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="15" id="Uft-uA-mZX"/>

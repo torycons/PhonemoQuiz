@@ -21,7 +21,7 @@ class GameViewController: UIViewController, SFSpeechRecognizerDelegate, DismissV
   fileprivate var recognitionTask: SFSpeechRecognitionTask?
   
   //MARK: Game Variables
-  fileprivate let ramdomWord = WordGenerator.ramdomWord()
+  fileprivate let randomWord = WordGenerator.ramdomWord()
   fileprivate var resultWords = [String]()
   fileprivate var score = 0 {
     didSet {
@@ -37,16 +37,22 @@ class GameViewController: UIViewController, SFSpeechRecognizerDelegate, DismissV
   
   //MARK: UI Variables
   @IBOutlet fileprivate weak var scoreUser: UILabel!
-  @IBOutlet fileprivate weak var question: UILabel!
+  @IBOutlet fileprivate weak var questionLabel: UILabel!
   @IBOutlet fileprivate weak var micBtn: UIButton!
   @IBOutlet fileprivate weak var profilePic: UIImageView!
   
   //MARK:- Life Cycle
   override func viewDidLoad() {
     super.viewDidLoad()
-    
+    view.showLoading()
     view.setupStatusBar(view: view)
+    print(randomWord)
     setupUI()
+  }
+  
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+    fetchWordData(word: randomWord)
   }
   
   //MARK:- IBActions
@@ -70,6 +76,15 @@ class GameViewController: UIViewController, SFSpeechRecognizerDelegate, DismissV
     },completion: { (_) in
       self.recordAndRecognizeSpeech()
     })
+  }
+  
+  //MARK:- Call APIs Functions
+  func fetchWordData(word: String) {
+    APIService.shared.fetchWordData(randomWord: word) { (result) in
+      guard let ipa = result.ipa else { return }
+      self.questionLabel.text = ipa
+      self.view.hideLoading()
+    }
   }
   
   //MARK:- Delegate Functions

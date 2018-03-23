@@ -13,7 +13,7 @@ class APIService {
   
   static let shared = APIService()
   
-  func fetchWordData(randomWord: String) {
+  func fetchWordData(randomWord: String, completion: @escaping (ChallengeWord) -> Void) {
     let url: URLConvertible = "https://od-api.oxforddictionaries.com:443/api/v1/entries/en/\(randomWord)"
     let headers: HTTPHeaders = [
       "Accept": "application/json",
@@ -33,7 +33,7 @@ class APIService {
           ipa: wordResult.results[0].lexicalEntries[0].pronunciations[0].phoneticSpelling,
           audio: wordResult.results[0].lexicalEntries[0].pronunciations[0].audioFile
         )
-        print(wordData)
+        completion(wordData)
       } catch let decodeErr {
         print(decodeErr)
       }

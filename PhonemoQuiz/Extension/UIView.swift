@@ -28,6 +28,10 @@ extension UIView {
     SVProgressHUD.show()
   }
   
+  func hideLoading() {
+    SVProgressHUD.dismiss()
+  }
+  
   func buttonAnimateSpring(animation: @escaping () -> Void, completion: ((Bool) -> Void)?) {
     UIView.animate(
       withDuration: 0.76,

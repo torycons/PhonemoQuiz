@@ -9,7 +9,6 @@
 import UIKit
 import FBSDKLoginKit
 import FirebaseAuth
-import SVProgressHUD
 
 class LogInViewController: UIViewController {
   
@@ -19,7 +18,6 @@ class LogInViewController: UIViewController {
   //MARK:- View LifeCycle
   override func viewDidLoad() {
     super.viewDidLoad()
-    
     setupUI()
   }
   
@@ -70,7 +68,7 @@ class LogInViewController: UIViewController {
     let mainStoryBoard = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateInitialViewController()
     guard let mainSB = mainStoryBoard else { return }
     self.present(mainSB, animated: true, completion: nil)
-    SVProgressHUD.dismiss()
+    self.view.hideLoading()
   }
 }
 
