@@ -12,5 +12,6 @@ target 'PhonemoQuiz' do
   pod 'FBSDKLoginKit'
   pod 'FBSDKShareKit'
   pod 'SVProgressHUD'
+  pod 'Alamofire', '~> 4.7'
   
 end

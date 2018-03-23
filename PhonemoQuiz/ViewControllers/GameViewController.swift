@@ -9,8 +9,25 @@
 import UIKit
 import AVFoundation
 import Speech
+import Alamofire
 
 class GameViewController: UIViewController, SFSpeechRecognizerDelegate, DismissViewDelegate {
+  
+  let word_id = "ace"
+  
+  func fetchWordData() {
+    let headers: HTTPHeaders = [
+      "Accept": "application/json",
+      "app_id": OxfordKeys.appId,
+      "app_key": OxfordKeys.appKeys
+    ]
+    let url: URLConvertible = "https://od-api.oxforddictionaries.com:443/api/v1/entries/en/\(word_id)"
+    Alamofire.request(url, method: .get, parameters: nil, encoding: URLEncoding.default, headers: headers).responseJSON { (response) in
+      
+      let jsonData = try! JSONSerialization.jsonObject(with: response.data!, options: .mutableContainers)
+      print(jsonData)
+    }
+  }
   
   //MARK:- Variables and IBOutlet
   //MARK: Speech Recognition Variables
@@ -27,7 +44,7 @@ class GameViewController: UIViewController, SFSpeechRecognizerDelegate, DismissV
     }
   }
   
-  //MARK: Effect Sound Variables
+  //MARK: Sound  Variables
   fileprivate let micSound = Bundle.main.url(forResource: "mic", withExtension: "mp3")
   fileprivate let correctSound = Bundle.main.url(forResource: "correct", withExtension: "mp3")
   fileprivate let wrongSound = Bundle.main.url(forResource: "wrong", withExtension: "mp3")
@@ -45,6 +62,7 @@ class GameViewController: UIViewController, SFSpeechRecognizerDelegate, DismissV
     
     view.setupStatusBar(view: view)
     setupUI()
+    fetchWordData()
   }
   
   //MARK:- IBActions

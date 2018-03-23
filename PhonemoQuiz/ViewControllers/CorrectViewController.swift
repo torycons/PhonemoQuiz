@@ -27,7 +27,7 @@ class CorrectViewController: UIViewController {
     listenBtn.layer.cornerRadius = 5
   }
   
-  @IBAction func nextQuestion(_ sender: UIButton) {
+  @IBAction fileprivate func nextQuestion(_ sender: UIButton) {
     dismiss(animated: false, completion: nil)
   }
   

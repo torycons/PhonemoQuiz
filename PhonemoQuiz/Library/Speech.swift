@@ -9,7 +9,6 @@
 import Speech
 
 extension NSObject {
-
   func recordSpeech(request: inout SFSpeechAudioBufferRecognitionRequest?, audioEngine: AVAudioEngine, completionRecording: (AVAudioEngine, SFSpeechAudioBufferRecognitionRequest) -> Void) {
     request = SFSpeechAudioBufferRecognitionRequest()
     guard let request = request else { return }
