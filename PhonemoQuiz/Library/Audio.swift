@@ -8,7 +8,10 @@
 
 import AVFoundation
 
-extension NSObject {
+struct Audio {
+  
+  static let shared = Audio()
+  
   func setupAudio(audioPlayer: inout AVAudioPlayer, sound: URL?) -> AVAudioPlayer {
     guard let sound = sound else { return audioPlayer }
     do {
@@ -21,3 +24,4 @@ extension NSObject {
     return audioPlayer
   }
 }
+

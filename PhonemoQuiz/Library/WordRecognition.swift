@@ -8,7 +8,10 @@
 
 import Speech
 
-extension NSObject {
+struct WordRecognition {
+  
+  static let shared = WordRecognition()
+  
   func recordSpeech(request: inout SFSpeechAudioBufferRecognitionRequest?, audioEngine: AVAudioEngine, completionRecording: (AVAudioEngine, SFSpeechAudioBufferRecognitionRequest) -> Void) {
     request = SFSpeechAudioBufferRecognitionRequest()
     guard let request = request else { return }

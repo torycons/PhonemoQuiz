@@ -29,7 +29,7 @@
 		D0DCCEEE2060F6D100CB3103 /* correct.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D0DCCEED2060F6D100CB3103 /* correct.mp3 */; };
 		D0DCCEF02060FA1400CB3103 /* WrongViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0DCCEEF2060FA1400CB3103 /* WrongViewController.swift */; };
 		D0F193842064E61800D7C437 /* Audio.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F193832064E61800D7C437 /* Audio.swift */; };
-		D0F193862064E6B400D7C437 /* Speech.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F193852064E6B400D7C437 /* Speech.swift */; };
+		D0F193862064E6B400D7C437 /* WordRecognition.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F193852064E6B400D7C437 /* WordRecognition.swift */; };
 		D0F193892065219800D7C437 /* OxfordKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F193882065219800D7C437 /* OxfordKeys.swift */; };
 		D0F1938C2065256E00D7C437 /* Words.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F1938B2065256E00D7C437 /* Words.swift */; };
 		D0F1938E206528D900D7C437 /* WordGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F1938D206528D900D7C437 /* WordGenerator.swift */; };
@@ -70,7 +70,7 @@
 		D0DCCEED2060F6D100CB3103 /* correct.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = correct.mp3; sourceTree = "<group>"; };
 		D0DCCEEF2060FA1400CB3103 /* WrongViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WrongViewController.swift; sourceTree = "<group>"; };
 		D0F193832064E61800D7C437 /* Audio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Audio.swift; sourceTree = "<group>"; };
-		D0F193852064E6B400D7C437 /* Speech.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Speech.swift; sourceTree = "<group>"; };
+		D0F193852064E6B400D7C437 /* WordRecognition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordRecognition.swift; sourceTree = "<group>"; };
 		D0F193882065219800D7C437 /* OxfordKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OxfordKeys.swift; sourceTree = "<group>"; };
 		D0F1938B2065256E00D7C437 /* Words.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Words.swift; sourceTree = "<group>"; };
 		D0F1938D206528D900D7C437 /* WordGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordGenerator.swift; sourceTree = "<group>"; };
@@ -131,12 +131,8 @@
 		D0535211205FAC8000D27263 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				D0535212205FACA100D27263 /* HighScoreCell.swift */,
-				D0535213205FACA100D27263 /* HighScoreCell.xib */,
-				D0798DA4206119AC00CCDF9D /* WrongCell.swift */,
-				D0798DA5206119AC00CCDF9D /* WrongCell.xib */,
-				D0798DA82061251500CCDF9D /* SummaryCell.swift */,
-				D0798DA92061251500CCDF9D /* SummaryCell.xib */,
+				D0F193992065621B00D7C437 /* Cells */,
+				D0F5767B205D72CF00ED72BE /* Storyboards */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -145,7 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				D0F193832064E61800D7C437 /* Audio.swift */,
-				D0F193852064E6B400D7C437 /* Speech.swift */,
+				D0F193852064E6B400D7C437 /* WordRecognition.swift */,
 				D0F1938D206528D900D7C437 /* WordGenerator.swift */,
 				D0F1939620655C3D00D7C437 /* Alert.swift */,
 			);
@@ -214,6 +210,19 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		D0F193992065621B00D7C437 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				D0535212205FACA100D27263 /* HighScoreCell.swift */,
+				D0535213205FACA100D27263 /* HighScoreCell.xib */,
+				D0798DA4206119AC00CCDF9D /* WrongCell.swift */,
+				D0798DA5206119AC00CCDF9D /* WrongCell.xib */,
+				D0798DA82061251500CCDF9D /* SummaryCell.swift */,
+				D0798DA92061251500CCDF9D /* SummaryCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		D0F57652205D45B200ED72BE = {
 			isa = PBXGroup;
 			children = (
@@ -243,7 +252,6 @@
 				D0535211205FAC8000D27263 /* Views */,
 				D0735945205EC5E000F583F9 /* Library */,
 				D0CB6E5B205E5091005646D7 /* PhonemoQuiz.entitlements */,
-				D0F5767B205D72CF00ED72BE /* Storyboards */,
 				D0F5767A205D71DB00ED72BE /* SupportingFiles */,
 				D0F57679205D71CB00ED72BE /* ViewControllers */,
 				D0F57665205D45B200ED72BE /* Assets.xcassets */,
@@ -471,7 +479,7 @@
 				D0F193912065432100D7C437 /* ChallengeWord.swift in Sources */,
 				D0DCCEEC2060E47F00CB3103 /* CorrectViewController.swift in Sources */,
 				D0F193892065219800D7C437 /* OxfordKeys.swift in Sources */,
-				D0F193862064E6B400D7C437 /* Speech.swift in Sources */,
+				D0F193862064E6B400D7C437 /* WordRecognition.swift in Sources */,
 				D0012607205D7CFB006CA6B7 /* ProfileViewController.swift in Sources */,
 				D0038CFA20624EAD00D3FE22 /* Protocols.swift in Sources */,
 				D0F5765F205D45B200ED72BE /* AppDelegate.swift in Sources */,

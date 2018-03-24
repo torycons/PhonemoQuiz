@@ -9,7 +9,10 @@
 import Foundation
 
 struct WordGenerator {
-  static func ramdomWord() -> String {
+  
+  static let shared = WordGenerator()
+  
+  func ramdomWord() -> String {
     let randomWord = Int(arc4random_uniform(UInt32(wordList.count)))
     return wordList[randomWord].lowercased()
   }

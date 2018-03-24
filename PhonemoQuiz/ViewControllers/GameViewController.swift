@@ -9,7 +9,6 @@
 import UIKit
 import AVFoundation
 import Speech
-import Alamofire
 
 class GameViewController: UIViewController, SFSpeechRecognizerDelegate, DismissViewDelegate {
   
@@ -21,7 +20,7 @@ class GameViewController: UIViewController, SFSpeechRecognizerDelegate, DismissV
   fileprivate var recognitionTask: SFSpeechRecognitionTask?
   
   //MARK: Game Variables
-  fileprivate let randomWord = WordGenerator.ramdomWord()
+  fileprivate let randomWord = WordGenerator.shared.ramdomWord()
   fileprivate var resultWords = [String]()
   fileprivate var score = 0 {
     didSet {
@@ -67,7 +66,7 @@ class GameViewController: UIViewController, SFSpeechRecognizerDelegate, DismissV
   }
   
   @IBAction fileprivate func recordSoundBtnTouch(_ sender: UIButton) {
-    setupAudio(audioPlayer: &audioPlayer, sound: micSound).play()
+    Audio.shared.setupAudio(audioPlayer: &audioPlayer, sound: micSound).play()
     micBtn.buttonAnimateSpring(animation: {
       self.micBtn.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
       self.micBtn.backgroundColor = .red
@@ -75,6 +74,11 @@ class GameViewController: UIViewController, SFSpeechRecognizerDelegate, DismissV
       self.micBtn.layer.cornerRadius = self.micBtn.frame.width / 2
     },completion: { (_) in
       self.recordAndRecognizeSpeech()
+      
+      DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+        print(self.resultWords)
+        self.stopRecording()
+      })
     })
   }
   
@@ -111,7 +115,7 @@ class GameViewController: UIViewController, SFSpeechRecognizerDelegate, DismissV
   
   //MARK: Record and Recognition
   fileprivate func recordAndRecognizeSpeech() {
-    recordSpeech(request: &request, audioEngine: audioEngine) { (audioEngine, request)  in
+    WordRecognition.shared.recordSpeech(request: &request, audioEngine: audioEngine) { (audioEngine, request)  in
       do {
         try audioEngine.start()
         self.resultWords = []
@@ -120,17 +124,18 @@ class GameViewController: UIViewController, SFSpeechRecognizerDelegate, DismissV
         return print(error)
       }
       
-      recognitionTask(recognitionTask: &recognitionTask, speechRecognizer: speechRecognizer, request: request, completion: { (result) in
+      WordRecognition.shared.recognitionTask(recognitionTask: &recognitionTask, speechRecognizer: speechRecognizer, request: request, completion: { (result) in
         guard let result = result else { return }
-        if self.resultWords.count == 0 {
-          let stringResult = result.bestTranscription.formattedString
-          self.resultWords.append(stringResult)
-          self.stopRecording(request: request, audioEngine: audioEngine, recognitionTask: &self.recognitionTask, completion: {
-            self.btnAnimBack()
-          })
-        }
+        let stringResult = result.bestTranscription.formattedString
+        self.resultWords.append(stringResult)
       })
     }
+  }
+  
+  fileprivate func stopRecording() {
+    WordRecognition.shared.stopRecording(request: request, audioEngine: audioEngine, recognitionTask: &self.recognitionTask, completion: {
+      self.btnAnimBack()
+    })
   }
   
   //MARK:- Check Recording Result and Push new ViewController
@@ -152,12 +157,12 @@ class GameViewController: UIViewController, SFSpeechRecognizerDelegate, DismissV
     if type == .correct {
       let viewController = storyboard?.instantiateViewController(withIdentifier: "correct") as! CorrectViewController
       viewController.result = word
-      presentVC(viewController: viewController, audioPlayer: setupAudio(audioPlayer: &audioPlayer, sound: correctSound))
+      presentVC(viewController: viewController, audioPlayer: Audio.shared.setupAudio(audioPlayer: &audioPlayer, sound: correctSound))
     } else if type == .wrong {
       let viewController = storyboard?.instantiateViewController(withIdentifier: "wrong") as! WrongViewController
       viewController.delegate = self
       viewController.score = self.score
-      presentVC(viewController: viewController, audioPlayer: setupAudio(audioPlayer: &audioPlayer, sound: wrongSound))
+      presentVC(viewController: viewController, audioPlayer: Audio.shared.setupAudio(audioPlayer: &audioPlayer, sound: wrongSound))
     }
   }
   
