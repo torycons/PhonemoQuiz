@@ -10,8 +10,8 @@ import UIKit
 import AVFoundation
 import Speech
 
-class GameViewController: UIViewController, SFSpeechRecognizerDelegate, DismissViewDelegate {
-  
+class GameViewController: UIViewController, SFSpeechRecognizerDelegate, DismissViewDelegate, FetchDataDelegate {
+
   //MARK:- Variables and IBOutlet
   //MARK: Speech Recognition Variables
   fileprivate let audioEngine = AVAudioEngine()
@@ -20,8 +20,13 @@ class GameViewController: UIViewController, SFSpeechRecognizerDelegate, DismissV
   fileprivate var recognitionTask: SFSpeechRecognitionTask?
   
   //MARK: Game Variables
-  fileprivate let randomWord = WordGenerator.shared.ramdomWord()
+  fileprivate var randomWord = WordGenerator.shared.ramdomWord()
   fileprivate var resultWords = [String]()
+  fileprivate var answerWord: ChallengeWord? {
+    didSet {
+      questionLabel.text = answerWord?.ipa
+    }
+  }
   fileprivate var score = 0 {
     didSet {
       scoreUser.text = "Score: \(score)"
@@ -45,8 +50,9 @@ class GameViewController: UIViewController, SFSpeechRecognizerDelegate, DismissV
     super.viewDidLoad()
     view.showLoading()
     view.setupStatusBar(view: view)
-    print(randomWord)
+    print(randomWord) //****
     setupUI()
+    Audio.shared.useAllSpeaker()
   }
   
   override func viewDidAppear(_ animated: Bool) {
@@ -56,7 +62,7 @@ class GameViewController: UIViewController, SFSpeechRecognizerDelegate, DismissV
   
   //MARK:- IBActions
   @IBAction fileprivate func quitGame(_ sender: UIButton) {
-    let alert = UIAlertController(title: "ออกจากเกม", message: "คุณต้องการออกจากเกมหรือไม่  (คะแนนจะไม่ถูกบันทึก)", preferredStyle: .alert)
+    let alert = UIAlertController(title: "ออกจากเกม", message: "คุณต้องการออกจากเกมหรือไม่ (คะแนนจะไม่ถูกบันทึก)", preferredStyle: .alert)
     let yesBtn = UIAlertAction(title: "ใช่", style: .cancel) { (_) in self.dismiss(animated: true, completion: nil) }
     let noBtn = UIAlertAction(title: "ไม่", style: .default, handler: nil)
     alert.addAction(yesBtn)
@@ -66,7 +72,7 @@ class GameViewController: UIViewController, SFSpeechRecognizerDelegate, DismissV
   }
   
   @IBAction fileprivate func recordSoundBtnTouch(_ sender: UIButton) {
-    Audio.shared.setupAudio(audioPlayer: &audioPlayer, sound: micSound).play()
+    Audio.shared.setupAudioFile(audioPlayer: &audioPlayer, sound: micSound).play()
     micBtn.buttonAnimateSpring(animation: {
       self.micBtn.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
       self.micBtn.backgroundColor = .red
@@ -76,7 +82,7 @@ class GameViewController: UIViewController, SFSpeechRecognizerDelegate, DismissV
       self.recordAndRecognizeSpeech()
       
       DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-        print(self.resultWords)
+        print(self.resultWords) //****
         self.stopRecording()
       })
     })
@@ -85,8 +91,7 @@ class GameViewController: UIViewController, SFSpeechRecognizerDelegate, DismissV
   //MARK:- Call APIs Functions
   func fetchWordData(word: String) {
     APIService.shared.fetchWordData(randomWord: word) { (result) in
-      guard let ipa = result.ipa else { return }
-      self.questionLabel.text = ipa
+      self.answerWord = result
       self.view.hideLoading()
     }
   }
@@ -94,6 +99,13 @@ class GameViewController: UIViewController, SFSpeechRecognizerDelegate, DismissV
   //MARK:- Delegate Functions
   func viewDismiss() {
     self.dismiss(animated: true, completion: nil)
+  }
+  
+  func fetchNewWord() {
+    view.showLoading()
+    randomWord = WordGenerator.shared.ramdomWord()
+    print(randomWord)//*****
+    fetchWordData(word: randomWord)
   }
   
   //MARK:- Setup Functions
@@ -140,11 +152,15 @@ class GameViewController: UIViewController, SFSpeechRecognizerDelegate, DismissV
   
   //MARK:- Check Recording Result and Push new ViewController
   fileprivate func checkRecordingResult() {
-    if !resultWords[0].isEmpty && resultWords[0] == "Hi" {
+    let filterResult = resultWords.filter { (word) -> Bool in
+      return word.lowercased() == randomWord
+    }
+    
+    if filterResult.count > 0 {
       score += 50
-      pushModal(type: .correct, word: "Hi")
+      pushModal(type: .correct)
     } else {
-      pushModal(type: .wrong, word: "Good")
+      pushModal(type: .wrong)
     }
   }
   
@@ -153,16 +169,18 @@ class GameViewController: UIViewController, SFSpeechRecognizerDelegate, DismissV
     case wrong
   }
   
-  fileprivate func pushModal(type: typeModal, word: String) {
+  fileprivate func pushModal(type: typeModal) {
     if type == .correct {
       let viewController = storyboard?.instantiateViewController(withIdentifier: "correct") as! CorrectViewController
-      viewController.result = word
-      presentVC(viewController: viewController, audioPlayer: Audio.shared.setupAudio(audioPlayer: &audioPlayer, sound: correctSound))
+      viewController.answer = answerWord
+      viewController.delegate = self
+      presentVC(viewController: viewController, audioPlayer: Audio.shared.setupAudioFile(audioPlayer: &audioPlayer, sound: correctSound))
     } else if type == .wrong {
       let viewController = storyboard?.instantiateViewController(withIdentifier: "wrong") as! WrongViewController
       viewController.delegate = self
+      viewController.answer = answerWord
       viewController.score = self.score
-      presentVC(viewController: viewController, audioPlayer: Audio.shared.setupAudio(audioPlayer: &audioPlayer, sound: wrongSound))
+      presentVC(viewController: viewController, audioPlayer: Audio.shared.setupAudioFile(audioPlayer: &audioPlayer, sound: wrongSound))
     }
   }
   

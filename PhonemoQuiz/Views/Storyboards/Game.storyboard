@@ -116,10 +116,10 @@
                                 <rect key="frame" x="40" y="153.5" width="295" height="360"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Fd6-VD-ewb">
-                                        <rect key="frame" x="40" y="25" width="215" height="300"/>
+                                        <rect key="frame" x="20" y="25" width="255" height="300"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ถูกต้อง !!!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I9d-Pq-Q7H">
-                                                <rect key="frame" x="57.5" y="0.0" width="100" height="35"/>
+                                                <rect key="frame" x="77.5" y="0.0" width="100" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="78W-1u-orP"/>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="P9i-Pn-xJc"/>
@@ -129,16 +129,16 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FW8-Mq-Igh">
-                                                <rect key="frame" x="0.0" y="45" width="215" height="10"/>
+                                                <rect key="frame" x="20" y="45" width="215" height="10"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="10" id="YNV-Lg-vHm"/>
                                                 </constraints>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="25S-YC-RZc">
-                                                <rect key="frame" x="9" y="65" width="197" height="105"/>
+                                                <rect key="frame" x="29" y="65" width="197" height="105"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bird  / bɜːrd/" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JBG-GQ-9mc">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bird  / bɜːrd/" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="JBG-GQ-9mc">
                                                         <rect key="frame" x="0.0" y="0.0" width="197" height="42"/>
                                                         <fontDescription key="fontDescription" name="SukhumvitSet-Text" family="Sukhumvit Set" pointSize="36"/>
                                                         <nil key="textColor"/>
@@ -152,18 +152,21 @@
                                                             <constraint firstAttribute="height" constant="43" id="eY0-PF-Fje"/>
                                                         </constraints>
                                                         <state key="normal" image="headphones"/>
+                                                        <connections>
+                                                            <action selector="playAnswerSound:" destination="W3k-5P-0Ee" eventType="touchUpInside" id="7Aw-RY-5nk"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bs2-ch-7Zy">
-                                                <rect key="frame" x="0.0" y="180" width="215" height="56"/>
+                                                <rect key="frame" x="20" y="180" width="215" height="56"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="15" id="Uft-uA-mZX"/>
                                                 </constraints>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fW8-Hb-Qor">
-                                                <rect key="frame" x="7.5" y="246" width="200" height="54"/>
+                                                <rect key="frame" x="27.5" y="246" width="200" height="54"/>
                                                 <color key="backgroundColor" red="1" green="0.66339254380000001" blue="0.28744211790000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="200" id="Wa7-xI-fJq"/>
@@ -180,10 +183,10 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="Fd6-VD-ewb" secondAttribute="trailing" constant="40" id="9nj-64-fcT"/>
+                                    <constraint firstAttribute="trailing" secondItem="Fd6-VD-ewb" secondAttribute="trailing" constant="20" id="9nj-64-fcT"/>
                                     <constraint firstAttribute="height" constant="360" id="OQw-T2-7fo"/>
                                     <constraint firstAttribute="bottom" secondItem="Fd6-VD-ewb" secondAttribute="bottom" constant="35" id="UEM-A3-1g3"/>
-                                    <constraint firstItem="Fd6-VD-ewb" firstAttribute="leading" secondItem="Hlo-kt-Xqg" secondAttribute="leading" constant="40" id="jLC-FE-3kJ"/>
+                                    <constraint firstItem="Fd6-VD-ewb" firstAttribute="leading" secondItem="Hlo-kt-Xqg" secondAttribute="leading" constant="20" id="jLC-FE-3kJ"/>
                                     <constraint firstItem="Fd6-VD-ewb" firstAttribute="top" secondItem="Hlo-kt-Xqg" secondAttribute="top" constant="25" id="zYe-z6-89t"/>
                                 </constraints>
                             </view>
@@ -201,6 +204,7 @@
                         <viewLayoutGuide key="safeArea" id="R0v-aZ-ng9"/>
                     </view>
                     <connections>
+                        <outlet property="answerLabel" destination="JBG-GQ-9mc" id="m8O-3R-odj"/>
                         <outlet property="listenBtn" destination="haV-dA-grJ" id="sed-Cq-bUk"/>
                         <outlet property="modalWrapper" destination="Hlo-kt-Xqg" id="XLw-QN-6tH"/>
                         <outlet property="nextBtn" destination="fW8-Hb-Qor" id="Isu-u2-st6"/>

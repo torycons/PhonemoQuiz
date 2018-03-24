@@ -39,4 +39,20 @@ class APIService {
       }
     }
   }
+  
+  func downloadWordSound(url: String?, completion: @escaping (Data?) -> Void) {
+    guard let unwrapUrl = url else { return }
+    let url: URLConvertible = unwrapUrl
+    
+    Alamofire.request(url, method: .get, parameters: nil, encoding: URLEncoding.default, headers: nil).response { (dataResponse) in
+      let data = dataResponse.data
+      completion(data)
+    }
+  }
+  
 }
+
+
+
+
+

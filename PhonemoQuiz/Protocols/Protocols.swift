@@ -15,3 +15,7 @@ protocol SwipeCollectionViewDelegate: class {
 protocol DismissViewDelegate: class {
   func viewDismiss()
 }
+
+protocol FetchDataDelegate: class {
+  func fetchNewWord()
+}

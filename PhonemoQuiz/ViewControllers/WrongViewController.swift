@@ -11,15 +11,19 @@ import UIKit
 class WrongViewController: UIViewController, SwipeCollectionViewDelegate, DismissViewDelegate {
 
   var score: Int?
+  var answer: ChallengeWord?
   weak var delegate: DismissViewDelegate?
+  
   fileprivate let scoreId = "score"
   fileprivate let summaryId = "summary"
+  
   @IBOutlet fileprivate weak var collectionView: UICollectionView!
   
   override func viewDidLoad() {
     super.viewDidLoad()
     
     setupCollectionView()
+    Audio.shared.useAllSpeaker()
   }
   
   fileprivate func setupCollectionView() {
@@ -53,11 +57,12 @@ extension WrongViewController: UICollectionViewDelegate, UICollectionViewDataSou
     case 0:
       let wrongCell = collectionView.dequeueReusableCell(withReuseIdentifier: scoreId, for: indexPath) as! WrongCell
       wrongCell.delegate = self
+      wrongCell.answer = answer
       return wrongCell
     case 1:
       let summaryCell = collectionView.dequeueReusableCell(withReuseIdentifier: summaryId, for: indexPath) as! SummaryCell
       summaryCell.delegate = self
-      summaryCell.score = self.score
+      summaryCell.score = score
       return summaryCell
     default:
       let cell = UICollectionViewCell()
