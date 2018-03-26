@@ -38,8 +38,8 @@
                                     <action selector="quitGame:" destination="Fba-to-7MI" eventType="touchUpInside" id="hc7-v8-cSj"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="/ bɜːrd/" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K15-DV-vbB">
-                                <rect key="frame" x="90" y="244" width="195" height="79"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="/ bɜːrd/" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="K15-DV-vbB">
+                                <rect key="frame" x="20" y="244" width="335" height="79"/>
                                 <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="64"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -79,10 +79,12 @@
                             <constraint firstItem="fAt-Kb-ZUT" firstAttribute="centerX" secondItem="sAK-b5-S1Z" secondAttribute="centerX" id="AoK-HO-3bH"/>
                             <constraint firstItem="HY9-tp-DUr" firstAttribute="centerY" secondItem="PJj-nj-Xk7" secondAttribute="centerY" id="V8C-ht-FG6"/>
                             <constraint firstItem="dqN-M1-VdC" firstAttribute="bottom" secondItem="fAt-Kb-ZUT" secondAttribute="bottom" constant="75" id="ZOD-hk-5uO"/>
+                            <constraint firstItem="dqN-M1-VdC" firstAttribute="trailing" secondItem="K15-DV-vbB" secondAttribute="trailing" constant="20" id="fyH-nh-v9L"/>
                             <constraint firstItem="HY9-tp-DUr" firstAttribute="leading" secondItem="PJj-nj-Xk7" secondAttribute="trailing" constant="24" id="g9X-tv-QeE"/>
                             <constraint firstItem="PJj-nj-Xk7" firstAttribute="top" secondItem="dqN-M1-VdC" secondAttribute="top" constant="22" id="lsZ-Xt-7Ji"/>
                             <constraint firstItem="K15-DV-vbB" firstAttribute="centerY" secondItem="sAK-b5-S1Z" secondAttribute="centerY" constant="-50" id="pbw-RV-ARs"/>
                             <constraint firstItem="PJj-nj-Xk7" firstAttribute="leading" secondItem="dqN-M1-VdC" secondAttribute="leading" constant="32" id="sJV-rO-4dK"/>
+                            <constraint firstItem="K15-DV-vbB" firstAttribute="leading" secondItem="dqN-M1-VdC" secondAttribute="leading" constant="20" id="wBk-89-0jG"/>
                             <constraint firstItem="eY2-zm-bcN" firstAttribute="centerY" secondItem="PJj-nj-Xk7" secondAttribute="centerY" id="xGI-yR-Dez"/>
                             <constraint firstItem="K15-DV-vbB" firstAttribute="centerX" secondItem="sAK-b5-S1Z" secondAttribute="centerX" id="yZo-bC-PqU"/>
                             <constraint firstItem="dqN-M1-VdC" firstAttribute="trailing" secondItem="eY2-zm-bcN" secondAttribute="trailing" constant="35" id="zLQ-aP-tZK"/>

@@ -80,8 +80,7 @@ class GameViewController: UIViewController, SFSpeechRecognizerDelegate, DismissV
       self.micBtn.layer.cornerRadius = self.micBtn.frame.width / 2
     },completion: { (_) in
       self.recordAndRecognizeSpeech()
-      
-      DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+      DispatchQueue.global(qos: .userInitiated).asyncAfter(deadline: .now() + 2, execute: {
         print(self.resultWords) //****
         self.stopRecording()
       })
@@ -90,9 +89,13 @@ class GameViewController: UIViewController, SFSpeechRecognizerDelegate, DismissV
   
   //MARK:- Call APIs Functions
   func fetchWordData(word: String) {
-    APIService.shared.fetchWordData(randomWord: word) { (result) in
+    APIService.shared.fetchWordData(randomWord: word, completion: { (result) in
       self.answerWord = result
       self.view.hideLoading()
+    }) {
+      let randomNewWord = WordGenerator.shared.ramdomWord()
+      self.randomWord = randomNewWord
+      self.fetchWordData(word: randomNewWord)
     }
   }
   
@@ -146,7 +149,9 @@ class GameViewController: UIViewController, SFSpeechRecognizerDelegate, DismissV
   
   fileprivate func stopRecording() {
     WordRecognition.shared.stopRecording(request: request, audioEngine: audioEngine, recognitionTask: &self.recognitionTask, completion: {
-      self.btnAnimBack()
+      DispatchQueue.main.async {
+        self.btnAnimBack()
+      }
     })
   }
   

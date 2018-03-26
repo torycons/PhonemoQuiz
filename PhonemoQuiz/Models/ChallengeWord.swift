@@ -15,7 +15,7 @@ struct ChallengeWord: Decodable {
 }
 
 struct AudioAndIPA: Decodable {
-  let audioFile: String
+  let audioFile: String?
   let phoneticSpelling: String
 }
 
