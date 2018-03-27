@@ -135,7 +135,9 @@ class GameViewController: UIViewController, SFSpeechRecognizerDelegate, DismissV
         try audioEngine.start()
         self.resultWords = []
       } catch {
-        self.sendAlert(message: "Audio Engine ทำงานผิดพลาด")
+        Alert.shared.alertResponseOnly(title: "Speech Recognizer Error", message: "Audio Engine ทำงานผิดพลาด", showAlertCompletion: { (alert) in
+          self.present(alert, animated: true, completion: nil)
+        })
         return print(error)
       }
       
@@ -194,11 +196,5 @@ class GameViewController: UIViewController, SFSpeechRecognizerDelegate, DismissV
     viewController.modalPresentationStyle = .overCurrentContext
     present(viewController, animated: false, completion: nil)
   }
-  
-  //MARK:- Alert Handle Error
-  fileprivate func sendAlert(message: String) {
-    let alert = UIAlertController(title: "Speech Recognizer Error", message: message, preferredStyle: .alert)
-    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-    self.present(alert, animated: true, completion: nil)
-  }
+
 }

@@ -9,11 +9,6 @@
 import Foundation
 import Alamofire
 
-enum fetchWordError: Error {
-  case noDataFetch
-  case error
-}
-
 class APIService {
   
   static let shared = APIService()

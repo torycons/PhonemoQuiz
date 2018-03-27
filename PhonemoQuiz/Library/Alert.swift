@@ -10,4 +10,11 @@ import UIKit
 
 class Alert {
   
+  static let shared = Alert()
+  
+  func alertResponseOnly(title: String, message: String, showAlertCompletion: (UIAlertController) -> ()) {
+    let alert = UIAlertController(title: "Speech Recognizer Error", message: message, preferredStyle: .alert)
+    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+    showAlertCompletion(alert)
+  }
 }

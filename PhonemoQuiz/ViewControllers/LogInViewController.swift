@@ -34,21 +34,25 @@ class LogInViewController: UIViewController {
   fileprivate func loginFBSDK() {
     FBSDKLoginManager().logIn(withReadPermissions: ["email", "public_profile"], from: self) { (result, err) in
       if err != nil {
-        print(err ?? "")
+        Alert.shared.alertResponseOnly(title: "Log In Facebook Error", message: err as! String, showAlertCompletion: { (alert) in
+          self.present(alert, animated: true, completion: nil)
+        })
         return
       }
       self.view.showLoading()
-      self.readEmail()
+      self.readDataUser()
     }
   }
   
-  fileprivate func readEmail() {
-    FBSDKGraphRequest(graphPath: "/me", parameters: ["fields": "id, name, email, picture.type(large)"]).start { (connection, result, error) in
-      if error != nil {
-        print(error ?? "")
+  fileprivate func readDataUser() {
+    FBSDKGraphRequest(graphPath: "/me", parameters: ["fields": "id, name, email, picture.type(large)"]).start { (connection, result, err) in
+      if err != nil {
+        Alert.shared.alertResponseOnly(title: "Read User Data Error", message: err as! String, showAlertCompletion: { (alert) in
+          self.present(alert, animated: true, completion: nil)
+        })
         return
       }
-      print(result ?? "")
+      print(result ?? "") //********
       self.loginFirebase()
     }
   }
@@ -57,7 +61,9 @@ class LogInViewController: UIViewController {
     let credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
     Auth.auth().signIn(with: credential) { (user, err) in
       if err != nil {
-        print(err ?? "")
+        Alert.shared.alertResponseOnly(title: "Log In Firebse Error", message: err as! String, showAlertCompletion: { (alert) in
+          self.present(alert, animated: true, completion: nil)
+        })
         return
       }
       self.changeToMainSB()

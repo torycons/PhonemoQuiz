@@ -53,8 +53,10 @@ class ProfileViewController: UIViewController {
       try Auth.auth().signOut()
       FBSDKLoginManager().logOut()
       goToLoginPage()
-    } catch let signOutError as NSError {
-      print("Can't Log out", signOutError)
+    } catch {
+      Alert.shared.alertResponseOnly(title: "ไม่สามารถออกจากระบบได้", message: "กรุณาลองใหม่", showAlertCompletion: { (alert) in
+        self.present(alert, animated: true, completion: nil)
+      })
     }
   }
   
