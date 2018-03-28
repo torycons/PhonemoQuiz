@@ -33,7 +33,7 @@ class APIService {
       do {
         let wordResult = try JSONDecoder().decode(SearchResults.self, from: dataResponse.data!)
         var wordDatas: [ChallengeWord] = []
-        wordResult.results[0].lexicalEntries[0].pronunciations.forEach({ (data) in
+        wordResult.results[0].lexicalEntries[0].pronunciations?.forEach({ (data) in
           if data.audioFile != nil {
             let wordData = ChallengeWord(
               word: wordResult.results[0].word,
