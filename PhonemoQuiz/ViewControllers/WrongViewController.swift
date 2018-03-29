@@ -10,6 +10,7 @@ import UIKit
 
 class WrongViewController: UIViewController, SwipeCollectionViewDelegate, DismissViewDelegate {
 
+  //MARK:- Variables and IBOutlet
   var score: Int?
   var answer: ChallengeWord?
   weak var delegate: DismissViewDelegate?
@@ -19,6 +20,7 @@ class WrongViewController: UIViewController, SwipeCollectionViewDelegate, Dismis
   
   @IBOutlet fileprivate weak var collectionView: UICollectionView!
   
+  //MARK:- Life Cycle
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -26,6 +28,7 @@ class WrongViewController: UIViewController, SwipeCollectionViewDelegate, Dismis
     Audio.shared.useAllSpeaker()
   }
   
+  //MARK:- Setup Functions
   fileprivate func setupCollectionView() {
     collectionView.delegate = self
     collectionView.dataSource = self
@@ -35,6 +38,7 @@ class WrongViewController: UIViewController, SwipeCollectionViewDelegate, Dismis
     collectionView.register(UINib(nibName: "SummaryCell", bundle: nil), forCellWithReuseIdentifier: summaryId)
   }
   
+  //MARK:- Delegate Functions
   func swipeToNext() {
     let indexPath = IndexPath(item: 1, section: 0)
     collectionView.scrollToItem(at: indexPath, at: .left, animated: true)
