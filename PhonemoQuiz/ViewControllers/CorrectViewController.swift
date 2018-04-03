@@ -49,7 +49,7 @@ class CorrectViewController: UIViewController {
   }
   
   @IBAction func playAnswerSound(_ sender: UIButton) {
-    APIService.shared.downloadWordSound(url: answer?.audio) { (data) in
+    OxfordAPIService.shared.downloadWordSound(url: answer?.audio) { (data) in
       Audio.shared.setupAudioDownload(audioPlayer: &self.audioPlayer, soundData: data).play()
     }
   }

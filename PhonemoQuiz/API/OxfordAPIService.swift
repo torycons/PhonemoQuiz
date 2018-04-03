@@ -9,9 +9,9 @@
 import Foundation
 import Alamofire
 
-class APIService {
+class OxfordAPIService {
   
-  static let shared = APIService()
+  static let shared = OxfordAPIService()
   
   func fetchWordData(randomWord: String, completion: @escaping (ChallengeWord) -> Void, completion404: @escaping () -> ()) {
     let url: URLConvertible = "https://od-api.oxforddictionaries.com:443/api/v1/entries/en/\(randomWord)"

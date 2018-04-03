@@ -89,7 +89,7 @@ class GameViewController: UIViewController, SFSpeechRecognizerDelegate, DismissV
   
   //MARK:- Call APIs Functions
   func fetchWordData(word: String) {
-    APIService.shared.fetchWordData(randomWord: word, completion: { (result) in
+    OxfordAPIService.shared.fetchWordData(randomWord: word, completion: { (result) in
       self.answerWord = result
       self.view.hideLoading()
     }) {
