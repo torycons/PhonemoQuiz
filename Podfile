@@ -8,10 +8,12 @@ target 'PhonemoQuiz' do
   # Pods for PhonemoQuiz
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
+  pod 'Firebase/Firestore'
   pod 'FBSDKCoreKit'
   pod 'FBSDKLoginKit'
   pod 'FBSDKShareKit'
   pod 'SVProgressHUD'
+  pod 'SwiftyJSON'
   pod 'Alamofire', '~> 4.7'
   
 end

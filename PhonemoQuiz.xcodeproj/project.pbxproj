@@ -12,6 +12,8 @@
 		D0012607205D7CFB006CA6B7 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0012606205D7CFB006CA6B7 /* ProfileViewController.swift */; };
 		D0038CFA20624EAD00D3FE22 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0038CF920624EAD00D3FE22 /* Protocols.swift */; };
 		D00EC330205FEB6300E9C648 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00EC32F205FEB6300E9C648 /* UIColor.swift */; };
+		D03B3EE82073BDD8003DF384 /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03B3EE72073BDD8003DF384 /* Member.swift */; };
+		D03B3EEA2073C7A7003DF384 /* UserAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03B3EE92073C7A7003DF384 /* UserAPIService.swift */; };
 		D0535214205FACA100D27263 /* HighScoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0535212205FACA100D27263 /* HighScoreCell.swift */; };
 		D0535215205FACA100D27263 /* HighScoreCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0535213205FACA100D27263 /* HighScoreCell.xib */; };
 		D0735947205EC5F700F583F9 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0735946205EC5F700F583F9 /* UIView.swift */; };
@@ -34,7 +36,7 @@
 		D0F1938C2065256E00D7C437 /* Words.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F1938B2065256E00D7C437 /* Words.swift */; };
 		D0F1938E206528D900D7C437 /* WordGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F1938D206528D900D7C437 /* WordGenerator.swift */; };
 		D0F193912065432100D7C437 /* ChallengeWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F193902065432100D7C437 /* ChallengeWord.swift */; };
-		D0F193942065510C00D7C437 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F193932065510C00D7C437 /* APIService.swift */; };
+		D0F193942065510C00D7C437 /* OxfordAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F193932065510C00D7C437 /* OxfordAPIService.swift */; };
 		D0F1939720655C3D00D7C437 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F1939620655C3D00D7C437 /* Alert.swift */; };
 		D0F5765F205D45B200ED72BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F5765E205D45B200ED72BE /* AppDelegate.swift */; };
 		D0F57661205D45B200ED72BE /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F57660205D45B200ED72BE /* LogInViewController.swift */; };
@@ -52,6 +54,8 @@
 		D0012606205D7CFB006CA6B7 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		D0038CF920624EAD00D3FE22 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		D00EC32F205FEB6300E9C648 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		D03B3EE72073BDD8003DF384 /* Member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
+		D03B3EE92073C7A7003DF384 /* UserAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAPIService.swift; sourceTree = "<group>"; };
 		D0535212205FACA100D27263 /* HighScoreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighScoreCell.swift; sourceTree = "<group>"; };
 		D0535213205FACA100D27263 /* HighScoreCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HighScoreCell.xib; sourceTree = "<group>"; };
 		D0735946205EC5F700F583F9 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
@@ -75,7 +79,7 @@
 		D0F1938B2065256E00D7C437 /* Words.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Words.swift; sourceTree = "<group>"; };
 		D0F1938D206528D900D7C437 /* WordGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordGenerator.swift; sourceTree = "<group>"; };
 		D0F193902065432100D7C437 /* ChallengeWord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeWord.swift; sourceTree = "<group>"; };
-		D0F193932065510C00D7C437 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		D0F193932065510C00D7C437 /* OxfordAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OxfordAPIService.swift; sourceTree = "<group>"; };
 		D0F1939620655C3D00D7C437 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		D0F5765B205D45B200ED72BE /* PhonemoQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhonemoQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0F5765E205D45B200ED72BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -178,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				D0F193902065432100D7C437 /* ChallengeWord.swift */,
+				D03B3EE72073BDD8003DF384 /* Member.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -185,7 +190,8 @@
 		D0F193922065510200D7C437 /* API */ = {
 			isa = PBXGroup;
 			children = (
-				D0F193932065510C00D7C437 /* APIService.swift */,
+				D0F193932065510C00D7C437 /* OxfordAPIService.swift */,
+				D03B3EE92073C7A7003DF384 /* UserAPIService.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -333,7 +339,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Thanapat Sorralump";
 				TargetAttributes = {
 					D0F5765A205D45B200ED72BE = {
@@ -400,24 +406,40 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-PhonemoQuiz/Pods-PhonemoQuiz-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKShareKit/FBSDKShareKit.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC/GRPCClient.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-ProtoRPC/ProtoRPC.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-RxLibrary/RxLibrary.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKShareKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRPCClient.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProtoRPC.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxLibrary.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -472,7 +494,7 @@
 				D0012605205D7A2F006CA6B7 /* LobbyViewController.swift in Sources */,
 				D0DCCEF02060FA1400CB3103 /* WrongViewController.swift in Sources */,
 				D0F1939720655C3D00D7C437 /* Alert.swift in Sources */,
-				D0F193942065510C00D7C437 /* APIService.swift in Sources */,
+				D0F193942065510C00D7C437 /* OxfordAPIService.swift in Sources */,
 				D0F57661205D45B200ED72BE /* LogInViewController.swift in Sources */,
 				D0F193842064E61800D7C437 /* Audio.swift in Sources */,
 				D00EC330205FEB6300E9C648 /* UIColor.swift in Sources */,
@@ -480,12 +502,14 @@
 				D0DCCEEC2060E47F00CB3103 /* CorrectViewController.swift in Sources */,
 				D0F193892065219800D7C437 /* OxfordKeys.swift in Sources */,
 				D0F193862064E6B400D7C437 /* WordRecognition.swift in Sources */,
+				D03B3EEA2073C7A7003DF384 /* UserAPIService.swift in Sources */,
 				D0012607205D7CFB006CA6B7 /* ProfileViewController.swift in Sources */,
 				D0038CFA20624EAD00D3FE22 /* Protocols.swift in Sources */,
 				D0F5765F205D45B200ED72BE /* AppDelegate.swift in Sources */,
 				D0F1938E206528D900D7C437 /* WordGenerator.swift in Sources */,
 				D0798DAA2061251500CCDF9D /* SummaryCell.swift in Sources */,
 				D0798DA6206119AC00CCDF9D /* WrongCell.swift in Sources */,
+				D03B3EE82073BDD8003DF384 /* Member.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -525,6 +549,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -532,6 +557,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -582,6 +608,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -589,6 +616,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
