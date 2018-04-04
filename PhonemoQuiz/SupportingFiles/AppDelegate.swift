@@ -29,9 +29,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     // Facebook Login Delegate
     FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
-
-    // Firebase Initial
-    FirebaseApp.configure()
     
     // Check Current User
     if Auth.auth().currentUser == nil {
@@ -40,6 +37,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     return true
+  }
+  
+  override init() {
+    super.init()
+    // Firebase Initial
+    FirebaseApp.configure()
   }
   
   func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {

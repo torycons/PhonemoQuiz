@@ -14,6 +14,7 @@ target 'PhonemoQuiz' do
   pod 'FBSDKShareKit'
   pod 'SVProgressHUD'
   pod 'SwiftyJSON'
+  pod 'SDWebImage', '~> 4.0'
   pod 'Alamofire', '~> 4.7'
   
 end

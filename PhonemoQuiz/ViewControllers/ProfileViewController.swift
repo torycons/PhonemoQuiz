@@ -9,17 +9,21 @@
 import UIKit
 import FBSDKLoginKit
 import FirebaseAuth
+import SDWebImage
 
 class ProfileViewController: UIViewController {
   
   //MARK:- IBOutlet and Variables
   @IBOutlet fileprivate weak var profileWrapper: UIView!
   @IBOutlet fileprivate weak var profileImage: UIImageView!
+  @IBOutlet fileprivate weak var profileName: UILabel!
+  @IBOutlet fileprivate weak var profileHighScore: UILabel!
   
   //MARK:- Life Cycle
   override func viewDidLoad() {
     super.viewDidLoad()
     setupUI()
+    fetchProfileData()
   }
   
   override func viewDidLayoutSubviews() {
@@ -63,5 +67,19 @@ class ProfileViewController: UIViewController {
   fileprivate func goToLoginPage() {
     let loginStoryBoard = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "LoginScreen")
     self.present(loginStoryBoard, animated: true, completion: nil)
+  }
+  
+  //MARK:- Fetch Data Function
+  fileprivate func fetchProfileData() {
+    UserAPIService.shared.fetchProfileData { (dataJSON) in
+      guard let picURLString = dataJSON[0]["picurl"].string else { return }
+      guard let highScore = dataJSON[0]["maxScore"].int else { return }
+      let picURL = URL(string: picURLString)
+      DispatchQueue.main.async {
+        self.profileName.text = dataJSON[0]["name"].string
+        self.profileHighScore.text = "\(highScore)"
+        self.profileImage.sd_setImage(with: picURL, placeholderImage: #imageLiteral(resourceName: "profile"))
+      }
+    }
   }
 }
