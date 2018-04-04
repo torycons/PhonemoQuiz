@@ -18,6 +18,8 @@ class ProfileViewController: UIViewController {
   @IBOutlet fileprivate weak var profileImage: UIImageView!
   @IBOutlet fileprivate weak var profileName: UILabel!
   @IBOutlet fileprivate weak var profileHighScore: UILabel!
+  @IBOutlet fileprivate weak var profileLoading: UIActivityIndicatorView!
+  @IBOutlet weak var profileStackWrapper: UIStackView!
   
   //MARK:- Life Cycle
   override func viewDidLoad() {
@@ -31,10 +33,16 @@ class ProfileViewController: UIViewController {
     setupView()
   }
   
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+    fetchScore()
+  }
+  
   //MARK:- Setup Functions
   fileprivate func setupUI() {
     profileWrapper.layer.cornerRadius = 7
     profileImage.layer.cornerRadius = profileImage.frame.height/2
+    profileLoading.hidesWhenStopped = true
   }
   
   fileprivate func setupView() {
@@ -73,12 +81,21 @@ class ProfileViewController: UIViewController {
   fileprivate func fetchProfileData() {
     UserAPIService.shared.fetchProfileData { (dataJSON) in
       guard let picURLString = dataJSON[0]["picurl"].string else { return }
-      guard let highScore = dataJSON[0]["maxScore"].int else { return }
       let picURL = URL(string: picURLString)
       DispatchQueue.main.async {
+        self.profileLoading.stopAnimating()
         self.profileName.text = dataJSON[0]["name"].string
-        self.profileHighScore.text = "\(highScore)"
         self.profileImage.sd_setImage(with: picURL, placeholderImage: #imageLiteral(resourceName: "profile"))
+        self.profileStackWrapper.isHidden = false
+      }
+    }
+  }
+  
+  fileprivate func fetchScore() {
+    UserAPIService.shared.fetchProfileData { (dataJSON) in
+      guard let highScore = dataJSON[0]["maxScore"].int else { return }
+      DispatchQueue.main.async {
+        self.profileHighScore.text = "\(highScore)"
       }
     }
   }

@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
+import SwiftyJSON
 
 class WrongViewController: UIViewController, SwipeCollectionViewDelegate, DismissViewDelegate {
 
@@ -18,6 +21,8 @@ class WrongViewController: UIViewController, SwipeCollectionViewDelegate, Dismis
   fileprivate let scoreId = "score"
   fileprivate let summaryId = "summary"
   
+  fileprivate let db = Firestore.firestore()
+  
   @IBOutlet fileprivate weak var collectionView: UICollectionView!
   
   //MARK:- Life Cycle
@@ -26,6 +31,7 @@ class WrongViewController: UIViewController, SwipeCollectionViewDelegate, Dismis
     
     setupCollectionView()
     Audio.shared.useAllSpeaker()
+    saveGameScore()
   }
   
   //MARK:- Setup Functions
@@ -47,6 +53,21 @@ class WrongViewController: UIViewController, SwipeCollectionViewDelegate, Dismis
   func viewDismiss() {
     self.dismiss(animated: false) {
       self.delegate?.viewDismiss()
+    }
+  }
+  
+  //MARK:- Save Scores to DB
+  fileprivate func saveGameScore() {
+    let auth = Auth.auth().currentUser?.uid
+    db.collection("Members").document(auth!).getDocument { (document, err) in
+      guard let unwrapDocument = document?.data() else { return }
+      let documentJSON = JSON(arrayLiteral: unwrapDocument)
+      let oldHighScore = documentJSON[0]["maxScore"].int
+      
+      if self.score! > oldHighScore! {
+        self.db.collection("Members").document(auth!).updateData(["maxScore" : self.score!])
+      }
+      
     }
   }
 }
