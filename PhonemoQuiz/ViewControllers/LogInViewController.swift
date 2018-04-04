@@ -9,15 +9,11 @@
 import UIKit
 import FBSDKLoginKit
 import FirebaseAuth
-import Firebase
-import SwiftyJSON
 
 class LogInViewController: UIViewController {
   
   //MARK:- IBOutlet
   @IBOutlet fileprivate weak var loginBtn: UIButton!
-  
-  let db = Firestore.firestore()
   
   //MARK:- View LifeCycle
   override func viewDidLoad() {
@@ -69,28 +65,9 @@ class LogInViewController: UIViewController {
         })
         return
       }
-      self.addDbUser(userData: userData)
-    }
-  }
-  
-  fileprivate func addDbUser(userData: Any?) {
-    let uid = Auth.auth().currentUser?.uid
-    db.collection("Members").document(uid!).getDocument { (document, err) in
-      guard (document?.data()) != nil else {
-        let userData = userData as! [String: Any]
-        let userDataJSON = JSON(arrayLiteral: userData)
-        self.db.collection("Members").document(uid!).setData([
-          "name": userDataJSON[0]["name"].string ?? "",
-          "email": userDataJSON[0]["email"].string ?? "",
-          "picurl": userDataJSON[0]["picture"]["data"]["url"].string ?? "",
-          "maxScore": 0,
-          "scores": []
-          ], completion: { (_) in
-            self.changeToMainSB()
-        })
-        return
-      }
-      self.changeToMainSB()
+      UserAPIService.shared.addDbUser(userData: userData, completion: {
+        self.changeToMainSB()
+      })
     }
   }
 

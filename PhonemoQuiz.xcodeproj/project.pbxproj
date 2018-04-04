@@ -24,6 +24,7 @@
 		D089954F205FC43C00BAADA5 /* Game.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D089954E205FC43C00BAADA5 /* Game.storyboard */; };
 		D0899551205FC5AA00BAADA5 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0899550205FC5AA00BAADA5 /* GameViewController.swift */; };
 		D0899553205FE70400BAADA5 /* mic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D0899552205FE70400BAADA5 /* mic.mp3 */; };
+		D0A67C9E20750837000CD314 /* FBSDKService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A67C9D20750837000CD314 /* FBSDKService.swift */; };
 		D0CED39D205E3D5A00CE708A /* Lobby.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0CED39C205E3D5A00CE708A /* Lobby.storyboard */; };
 		D0CED39F205E3D9800CE708A /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0CED39E205E3D9800CE708A /* Profile.storyboard */; };
 		D0D532B3206386AA00AFB223 /* wrong.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D0D532B2206386AA00AFB223 /* wrong.mp3 */; };
@@ -66,6 +67,7 @@
 		D089954E205FC43C00BAADA5 /* Game.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Game.storyboard; sourceTree = "<group>"; };
 		D0899550205FC5AA00BAADA5 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		D0899552205FE70400BAADA5 /* mic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = mic.mp3; sourceTree = "<group>"; };
+		D0A67C9D20750837000CD314 /* FBSDKService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBSDKService.swift; sourceTree = "<group>"; };
 		D0CB6E5B205E5091005646D7 /* PhonemoQuiz.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PhonemoQuiz.entitlements; sourceTree = "<group>"; };
 		D0CED39C205E3D5A00CE708A /* Lobby.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Lobby.storyboard; sourceTree = "<group>"; };
 		D0CED39E205E3D9800CE708A /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
@@ -192,6 +194,7 @@
 			children = (
 				D0F193932065510C00D7C437 /* OxfordAPIService.swift */,
 				D03B3EE92073C7A7003DF384 /* UserAPIService.swift */,
+				D0A67C9D20750837000CD314 /* FBSDKService.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -413,6 +416,7 @@
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC/GRPCClient.framework",
@@ -433,6 +437,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRPCClient.framework",
@@ -503,6 +508,7 @@
 				D0F193892065219800D7C437 /* OxfordKeys.swift in Sources */,
 				D0F193862064E6B400D7C437 /* WordRecognition.swift in Sources */,
 				D03B3EEA2073C7A7003DF384 /* UserAPIService.swift in Sources */,
+				D0A67C9E20750837000CD314 /* FBSDKService.swift in Sources */,
 				D0012607205D7CFB006CA6B7 /* ProfileViewController.swift in Sources */,
 				D0038CFA20624EAD00D3FE22 /* Protocols.swift in Sources */,
 				D0F5765F205D45B200ED72BE /* AppDelegate.swift in Sources */,

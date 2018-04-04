@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0yQ-mo-4mt">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0yQ-mo-4mt">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -51,10 +51,13 @@
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BXc-Hv-bpn">
                                 <rect key="frame" x="20" y="104" width="374" height="110"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="tcM-kc-tAK">
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="qJB-pU-pvv">
+                                        <rect key="frame" x="177" y="44.333333333333343" width="20" height="20"/>
+                                    </activityIndicatorView>
+                                    <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="tcM-kc-tAK">
                                         <rect key="frame" x="30" y="18" width="314" height="74"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ProfilePic" translatesAutoresizingMaskIntoConstraints="NO" id="mDo-ds-oPd">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="mDo-ds-oPd">
                                                 <rect key="frame" x="0.0" y="0.0" width="74" height="74"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="mDo-ds-oPd" secondAttribute="height" multiplier="1:1" id="Qx3-9n-wlg"/>
@@ -63,8 +66,8 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="wxw-oM-Gmu">
                                                 <rect key="frame" x="89" y="0.0" width="225" height="74"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thanapat Sorralump" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="bNL-gS-OvT">
-                                                        <rect key="frame" x="0.0" y="0.0" width="175.66666666666666" height="41.333333333333336"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SSS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="bNL-gS-OvT">
+                                                        <rect key="frame" x="0.0" y="0.0" width="32" height="41.333333333333336"/>
                                                         <fontDescription key="fontDescription" name="SukhumvitSet-Medium" family="Sukhumvit Set" pointSize="20"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -97,6 +100,8 @@
                                     <constraint firstAttribute="height" constant="110" id="K94-YB-yxd"/>
                                     <constraint firstItem="tcM-kc-tAK" firstAttribute="leading" secondItem="BXc-Hv-bpn" secondAttribute="leading" constant="30" id="OWR-vK-SWr"/>
                                     <constraint firstAttribute="bottom" secondItem="tcM-kc-tAK" secondAttribute="bottom" constant="18" id="Rd1-vR-Xa6"/>
+                                    <constraint firstItem="qJB-pU-pvv" firstAttribute="centerY" secondItem="BXc-Hv-bpn" secondAttribute="centerY" id="V3G-kh-SHT"/>
+                                    <constraint firstItem="qJB-pU-pvv" firstAttribute="centerX" secondItem="BXc-Hv-bpn" secondAttribute="centerX" id="jXL-sL-LJ2"/>
                                     <constraint firstAttribute="trailing" secondItem="tcM-kc-tAK" secondAttribute="trailing" constant="30" id="v5b-7W-Ujt"/>
                                 </constraints>
                             </view>
@@ -125,7 +130,11 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="profileHighScore" destination="tHV-ss-cu3" id="OWV-Iz-EKJ"/>
                         <outlet property="profileImage" destination="mDo-ds-oPd" id="h4h-SK-VBQ"/>
+                        <outlet property="profileLoading" destination="qJB-pU-pvv" id="err-yG-dlz"/>
+                        <outlet property="profileName" destination="bNL-gS-OvT" id="eu8-q9-JLf"/>
+                        <outlet property="profileStackWrapper" destination="tcM-kc-tAK" id="D3f-Rg-QAZ"/>
                         <outlet property="profileWrapper" destination="BXc-Hv-bpn" id="Nvf-PH-PMc"/>
                     </connections>
                 </viewController>
@@ -135,7 +144,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ProfilePic" width="960" height="960"/>
         <image name="profile" width="24" height="24"/>
     </resources>
 </document>
