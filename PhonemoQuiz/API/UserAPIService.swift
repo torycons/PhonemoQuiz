@@ -7,7 +7,6 @@
 //
 
 import Firebase
-import FirebaseAuth
 import SwiftyJSON
 
 class UserAPIService {
@@ -43,5 +42,9 @@ class UserAPIService {
       
       completion(dataJSON)
     }
+  }
+  
+  func updateScores(scoreData: [Int]) {
+    db.collection("Members").document(uid!).updateData(["scores": scoreData])
   }
 }

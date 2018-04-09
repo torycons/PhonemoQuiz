@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import SwiftyJSON
 
 class WrongCell: UICollectionViewCell {
   
@@ -16,6 +17,7 @@ class WrongCell: UICollectionViewCell {
   @IBOutlet fileprivate weak var background: UIView!
   @IBOutlet fileprivate weak var answerLabel: UILabel!
   
+  var score: Int?
   var answer: ChallengeWord? {
     didSet {
       guard let word = answer?.word else { return }
@@ -23,6 +25,7 @@ class WrongCell: UICollectionViewCell {
       answerLabel.text = "\(word) \(ipa)"
     }
   }
+  
   weak var delegate: SwipeCollectionViewDelegate?
   fileprivate var audioPlayer = AVAudioPlayer()
   
@@ -39,6 +42,11 @@ class WrongCell: UICollectionViewCell {
   
   @IBAction fileprivate func goToSummary(_ sender: UIButton) {
     self.delegate?.swipeToNext()
+    UserAPIService.shared.fetchProfileData { (data) in
+      var scoreData = data[0]["scores"].arrayValue.map{ $0.intValue }
+      scoreData.append(self.score!)
+      UserAPIService.shared.updateScores(scoreData: scoreData)
+    }
   }
   
   @IBAction func playAnswerSound(_ sender: UIButton) {
