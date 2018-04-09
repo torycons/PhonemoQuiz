@@ -80,14 +80,17 @@ class ProfileViewController: UIViewController {
   //MARK:- Fetch Data Function
   fileprivate func fetchProfileData() {
     UserAPIService.shared.fetchProfileData { (dataJSON) in
-      guard let picURLString = dataJSON[0]["picurl"].string else { return }
-      let picURL = URL(string: picURLString)
-      DispatchQueue.main.async {
-        self.profileLoading.stopAnimating()
-        self.profileName.text = dataJSON[0]["name"].string
-        self.profileImage.sd_setImage(with: picURL, placeholderImage: #imageLiteral(resourceName: "profile"))
-        self.profileStackWrapper.isHidden = false
-      }
+      FBSDKService.shared.readDataPicFromFacebook(error: { (alert) in
+        self.present(alert, animated: true, completion: nil)
+      }, completion: { (pic) in
+        let picURL = URL(string: pic!)
+        DispatchQueue.main.async {
+          self.profileImage.sd_setImage(with: picURL, placeholderImage: #imageLiteral(resourceName: "profile"))
+          self.profileLoading.stopAnimating()
+          self.profileName.text = dataJSON[0]["name"].string
+          self.profileStackWrapper.isHidden = false
+        }
+      })
     }
   }
   

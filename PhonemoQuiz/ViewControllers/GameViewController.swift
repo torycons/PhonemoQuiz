@@ -48,7 +48,6 @@ class GameViewController: UIViewController, SFSpeechRecognizerDelegate, DismissV
   //MARK:- Life Cycle
   override func viewDidLoad() {
     super.viewDidLoad()
-    view.showLoading()
     view.setupStatusBar(view: view)
     print(randomWord) //****
     setupUI()
@@ -57,6 +56,7 @@ class GameViewController: UIViewController, SFSpeechRecognizerDelegate, DismissV
   
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
+    view.showLoading()
     fetchWordData(word: randomWord)
   }
   

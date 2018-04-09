@@ -8,7 +8,6 @@
 
 import UIKit
 import Firebase
-import FirebaseAuth
 import SwiftyJSON
 
 class WrongViewController: UIViewController, SwipeCollectionViewDelegate, DismissViewDelegate {
@@ -82,6 +81,7 @@ extension WrongViewController: UICollectionViewDelegate, UICollectionViewDataSou
     case 0:
       let wrongCell = collectionView.dequeueReusableCell(withReuseIdentifier: scoreId, for: indexPath) as! WrongCell
       wrongCell.delegate = self
+      wrongCell.score = score
       wrongCell.answer = answer
       return wrongCell
     case 1:

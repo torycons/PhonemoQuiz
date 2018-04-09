@@ -45,7 +45,7 @@ class LogInViewController: UIViewController {
   }
   
   fileprivate func readDataUser() {
-    FBSDKGraphRequest(graphPath: "/me", parameters: ["fields": "id, name, email, picture.type(large)"]).start { (connection, result, err) in
+    FBSDKGraphRequest(graphPath: "/me", parameters: ["fields": "id, name, email"]).start { (connection, result, err) in
       if err != nil {
         Alert.shared.alertResponseOnly(title: "Read User Data Error", message: err as! String, showAlertCompletion: { (alert) in
           self.present(alert, animated: true, completion: nil)
@@ -74,8 +74,8 @@ class LogInViewController: UIViewController {
   fileprivate func changeToMainSB() {
     let mainStoryBoard = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateInitialViewController()
     guard let mainSB = mainStoryBoard else { return }
-    self.present(mainSB, animated: true, completion: nil)
     self.view.hideLoading()
+    self.present(mainSB, animated: true, completion: nil)
   }
 }
 
