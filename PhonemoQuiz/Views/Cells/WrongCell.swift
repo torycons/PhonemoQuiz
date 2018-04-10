@@ -42,10 +42,14 @@ class WrongCell: UICollectionViewCell {
   
   @IBAction fileprivate func goToSummary(_ sender: UIButton) {
     self.delegate?.swipeToNext()
+    
     UserAPIService.shared.fetchProfileData { (data) in
       var scoreData = data[0]["scores"].arrayValue.map{ $0.intValue }
       scoreData.append(self.score!)
-      UserAPIService.shared.updateScores(scoreData: scoreData)
+      
+      UserAPIService.shared.updateScores(scoreData: scoreData, completion: {
+        UserAPIService.shared.updateTopScoreToDB(score: self.score)
+      })
     }
   }
   
@@ -54,5 +58,4 @@ class WrongCell: UICollectionViewCell {
       Audio.shared.setupAudioDownload(audioPlayer: &self.audioPlayer, soundData: data).play()
     }
   }
-  
 }

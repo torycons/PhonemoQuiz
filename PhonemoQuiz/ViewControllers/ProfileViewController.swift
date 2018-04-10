@@ -84,6 +84,7 @@ class ProfileViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
       }, completion: { (pic) in
         let picURL = URL(string: pic!)
+        UserAPIService.shared.updatePic(picProfile: pic!)
         DispatchQueue.main.async {
           self.profileImage.sd_setImage(with: picURL, placeholderImage: #imageLiteral(resourceName: "profile"))
           self.profileLoading.stopAnimating()
