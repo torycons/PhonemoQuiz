@@ -11,6 +11,7 @@
 		D0012605205D7A2F006CA6B7 /* LobbyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0012604205D7A2F006CA6B7 /* LobbyViewController.swift */; };
 		D0012607205D7CFB006CA6B7 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0012606205D7CFB006CA6B7 /* ProfileViewController.swift */; };
 		D0038CFA20624EAD00D3FE22 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0038CF920624EAD00D3FE22 /* Protocols.swift */; };
+		D00B5C5B207CAF8E00421FC6 /* TopScoreMember.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00B5C5A207CAF8E00421FC6 /* TopScoreMember.swift */; };
 		D00EC330205FEB6300E9C648 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00EC32F205FEB6300E9C648 /* UIColor.swift */; };
 		D03B3EE82073BDD8003DF384 /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03B3EE72073BDD8003DF384 /* Member.swift */; };
 		D03B3EEA2073C7A7003DF384 /* UserAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03B3EE92073C7A7003DF384 /* UserAPIService.swift */; };
@@ -54,6 +55,7 @@
 		D0012604205D7A2F006CA6B7 /* LobbyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyViewController.swift; sourceTree = "<group>"; };
 		D0012606205D7CFB006CA6B7 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		D0038CF920624EAD00D3FE22 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		D00B5C5A207CAF8E00421FC6 /* TopScoreMember.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopScoreMember.swift; sourceTree = "<group>"; };
 		D00EC32F205FEB6300E9C648 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		D03B3EE72073BDD8003DF384 /* Member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
 		D03B3EE92073C7A7003DF384 /* UserAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAPIService.swift; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 			children = (
 				D0F193902065432100D7C437 /* ChallengeWord.swift */,
 				D03B3EE72073BDD8003DF384 /* Member.swift */,
+				D00B5C5A207CAF8E00421FC6 /* TopScoreMember.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -494,6 +497,7 @@
 			files = (
 				D0899551205FC5AA00BAADA5 /* GameViewController.swift in Sources */,
 				D0F1938C2065256E00D7C437 /* Words.swift in Sources */,
+				D00B5C5B207CAF8E00421FC6 /* TopScoreMember.swift in Sources */,
 				D0535214205FACA100D27263 /* HighScoreCell.swift in Sources */,
 				D0735947205EC5F700F583F9 /* UIView.swift in Sources */,
 				D0012605205D7A2F006CA6B7 /* LobbyViewController.swift in Sources */,

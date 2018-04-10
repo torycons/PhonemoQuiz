@@ -24,6 +24,7 @@ class UserAPIService {
         self.db.collection("Members").document(self.uid!).setData([
           "name": userDataJSON[0]["name"].string ?? "",
           "email": userDataJSON[0]["email"].string ?? "",
+          "picurl": userDataJSON[0]["picture"]["data"]["url"].string ?? "",
           "maxScore": 0,
           "scores": []
           ], completion: { (_) in
@@ -44,7 +45,37 @@ class UserAPIService {
     }
   }
   
-  func updateScores(scoreData: [Int]) {
-    db.collection("Members").document(uid!).updateData(["scores": scoreData])
+  func updateScores(scoreData: [Int], completion: @escaping () -> Void) {
+    db.collection("Members").document(uid!).updateData(["scores": scoreData]) { (_) in
+      completion()
+    }
+  }
+  
+  func updatePic(picProfile: String) {
+    db.collection("Members").document(uid!).updateData(["picurl": picProfile], completion: nil)
+  }
+  
+  func updateTopScoreToDB(score: Int?) {
+    self.db.collection("Lobby").document("Users").getDocument(completion: { (document, err) in
+      guard let unwrapData = document?.data() else { return }
+      let dataJSON = JSON(arrayLiteral: unwrapData)
+      var topScoreUsers = dataJSON[0]["TopScore"].map({ (user) -> TopScoreMember in
+        return TopScoreMember(uid: user.1["uid"].stringValue, score: Int(truncating: user.1["score"].numberValue))
+      })
+      for topMember in topScoreUsers {
+        guard let userScore = score else { return }
+        if (userScore > topMember.score) {
+          let user = TopScoreMember(uid: (Auth.auth().currentUser?.uid)!, score: userScore)
+          topScoreUsers.append(user)
+          break
+        }
+      }
+      let sortedMember = topScoreUsers.sorted(by: { $0.score > $1.score })
+      let totalArray: [TopScoreMember] = sortedMember.count > 5 ? Array(sortedMember[0...4]) : sortedMember
+      let userType = totalArray.map({ (member) -> [String: Any] in
+        return ["score": member.score, "uid": member.uid]
+      })
+      self.db.collection("Lobby").document("Users").updateData(["TopScore": userType])
+    })
   }
 }
