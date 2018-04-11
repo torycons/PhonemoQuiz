@@ -46,6 +46,14 @@ class UserAPIService {
   }
   
   func updateScores(scoreData: [Int], completion: @escaping () -> Void) {
+    self.fetchProfileData { (data) in
+      let oldMaxScore = Int(truncating: data[0]["maxScore"].numberValue)
+      let lastestScore = scoreData[scoreData.endIndex - 1]
+      if lastestScore > oldMaxScore {
+        self.db.collection("Members").document(self.uid!).updateData(["maxScore": lastestScore])
+      }
+    }
+    
     db.collection("Members").document(uid!).updateData(["scores": scoreData]) { (_) in
       completion()
     }
