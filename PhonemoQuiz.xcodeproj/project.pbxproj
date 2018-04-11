@@ -13,6 +13,7 @@
 		D0038CFA20624EAD00D3FE22 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0038CF920624EAD00D3FE22 /* Protocols.swift */; };
 		D00B5C5B207CAF8E00421FC6 /* TopScoreMember.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00B5C5A207CAF8E00421FC6 /* TopScoreMember.swift */; };
 		D00EC330205FEB6300E9C648 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00EC32F205FEB6300E9C648 /* UIColor.swift */; };
+		D03B16FD207E15F500A57E36 /* TopScoreLobbyMember.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03B16FC207E15F500A57E36 /* TopScoreLobbyMember.swift */; };
 		D03B3EE82073BDD8003DF384 /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03B3EE72073BDD8003DF384 /* Member.swift */; };
 		D03B3EEA2073C7A7003DF384 /* UserAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03B3EE92073C7A7003DF384 /* UserAPIService.swift */; };
 		D0535214205FACA100D27263 /* HighScoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0535212205FACA100D27263 /* HighScoreCell.swift */; };
@@ -57,6 +58,7 @@
 		D0038CF920624EAD00D3FE22 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		D00B5C5A207CAF8E00421FC6 /* TopScoreMember.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopScoreMember.swift; sourceTree = "<group>"; };
 		D00EC32F205FEB6300E9C648 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		D03B16FC207E15F500A57E36 /* TopScoreLobbyMember.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopScoreLobbyMember.swift; sourceTree = "<group>"; };
 		D03B3EE72073BDD8003DF384 /* Member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
 		D03B3EE92073C7A7003DF384 /* UserAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAPIService.swift; sourceTree = "<group>"; };
 		D0535212205FACA100D27263 /* HighScoreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighScoreCell.swift; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 				D0F193902065432100D7C437 /* ChallengeWord.swift */,
 				D03B3EE72073BDD8003DF384 /* Member.swift */,
 				D00B5C5A207CAF8E00421FC6 /* TopScoreMember.swift */,
+				D03B16FC207E15F500A57E36 /* TopScoreLobbyMember.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -502,6 +505,7 @@
 				D0735947205EC5F700F583F9 /* UIView.swift in Sources */,
 				D0012605205D7A2F006CA6B7 /* LobbyViewController.swift in Sources */,
 				D0DCCEF02060FA1400CB3103 /* WrongViewController.swift in Sources */,
+				D03B16FD207E15F500A57E36 /* TopScoreLobbyMember.swift in Sources */,
 				D0F1939720655C3D00D7C437 /* Alert.swift in Sources */,
 				D0F193942065510C00D7C437 /* OxfordAPIService.swift in Sources */,
 				D0F57661205D45B200ED72BE /* LogInViewController.swift in Sources */,
