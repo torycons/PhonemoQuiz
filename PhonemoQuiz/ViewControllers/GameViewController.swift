@@ -9,6 +9,7 @@
 import UIKit
 import AVFoundation
 import Speech
+import SDWebImage
 
 class GameViewController: UIViewController, SFSpeechRecognizerDelegate, DismissViewDelegate, FetchDataDelegate {
 
@@ -51,6 +52,7 @@ class GameViewController: UIViewController, SFSpeechRecognizerDelegate, DismissV
     view.setupStatusBar(view: view)
     print(randomWord) //****
     setupUI()
+    setupProfilePicture()
     Audio.shared.useAllSpeaker()
   }
   
@@ -125,6 +127,13 @@ class GameViewController: UIViewController, SFSpeechRecognizerDelegate, DismissV
       self.micBtn.layer.cornerRadius = 15
     }) { (_) in
       self.checkRecordingResult()
+    }
+  }
+  
+  fileprivate func setupProfilePicture() {
+    UserAPIService.shared.fetchProfileData { (data) in
+      let profileURL = URL(string: data[0]["picurl"].stringValue)
+      self.profilePic.sd_setImage(with: profileURL, placeholderImage: #imageLiteral(resourceName: "profile"))
     }
   }
   

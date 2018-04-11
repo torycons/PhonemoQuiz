@@ -45,6 +45,15 @@ class UserAPIService {
     }
   }
   
+  func fetchOtherProfileData(uid: String, completion: @escaping (JSON) -> Void) {
+    db.collection("Members").document(uid).getDocument { (document, err) in
+      guard let unwrapData = document?.data() else { return }
+      let dataJSON = JSON(arrayLiteral: unwrapData)
+      
+      completion(dataJSON)
+    }
+  }
+  
   func updateScores(scoreData: [Int], completion: @escaping () -> Void) {
     self.fetchProfileData { (data) in
       let oldMaxScore = Int(truncating: data[0]["maxScore"].numberValue)
@@ -86,4 +95,20 @@ class UserAPIService {
       self.db.collection("Lobby").document("Users").updateData(["TopScore": userType])
     })
   }
+  
+  func fetchTopMember(completion: @escaping (JSON) -> ()) {
+    self.db.collection("Lobby").document("Users").getDocument { (document, err) in
+      guard let unwrapData = document?.data() else { return }
+      let dataJSON = JSON(arrayLiteral: unwrapData)
+      
+      completion(dataJSON)
+    }
+  }
+  
 }
+
+
+
+
+
+

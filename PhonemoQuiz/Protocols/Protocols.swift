@@ -19,3 +19,7 @@ protocol DismissViewDelegate: class {
 protocol FetchDataDelegate: class {
   func fetchNewWord()
 }
+
+protocol StopIndicator: class {
+  func stopIndicator()
+}

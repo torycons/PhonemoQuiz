@@ -41,7 +41,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ProfilePic" translatesAutoresizingMaskIntoConstraints="NO" id="PJj-nj-Xk7">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="PJj-nj-Xk7">
                                 <rect key="frame" x="32" y="42" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="K3D-bX-ygy"/>
@@ -263,9 +263,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ProfilePic" width="960" height="960"/>
         <image name="close" width="31" height="31"/>
         <image name="headphones" width="27" height="24"/>
         <image name="microphone" width="51" height="77"/>
+        <image name="profile" width="24" height="24"/>
     </resources>
 </document>
