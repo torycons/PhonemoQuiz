@@ -10,6 +10,8 @@ import UIKit
 import FBSDKLoginKit
 import FirebaseAuth
 import SDWebImage
+import SwiftyJSON
+import Charts
 
 class ProfileViewController: UIViewController {
   
@@ -19,7 +21,8 @@ class ProfileViewController: UIViewController {
   @IBOutlet fileprivate weak var profileName: UILabel!
   @IBOutlet fileprivate weak var profileHighScore: UILabel!
   @IBOutlet fileprivate weak var profileLoading: UIActivityIndicatorView!
-  @IBOutlet weak var profileStackWrapper: UIStackView!
+  @IBOutlet fileprivate weak var profileStackWrapper: UIStackView!
+  @IBOutlet weak var statChart: LineChartView!
   
   //MARK:- Life Cycle
   override func viewDidLoad() {
@@ -90,6 +93,7 @@ class ProfileViewController: UIViewController {
           self.profileLoading.stopAnimating()
           self.profileName.text = dataJSON[0]["name"].string
           self.profileStackWrapper.isHidden = false
+          self.updateChart(data: dataJSON[0]["scores"].arrayValue)
         }
       })
     }
@@ -102,5 +106,27 @@ class ProfileViewController: UIViewController {
         self.profileHighScore.text = "\(highScore)"
       }
     }
+  }
+  
+  //MARK:- Chart Function
+  fileprivate func updateChart(data: [JSON]) {
+    var scoreData: [ChartDataEntry] = []
+    
+    data.forEach { (score) in
+      let scoreChart = ChartDataEntry(x: Double(scoreData.count + 1), y: score.doubleValue)
+      scoreData.append(scoreChart)
+    }
+    
+    let dataSet = LineChartDataSet(values: scoreData, label: "Score")
+    let data = LineChartData(dataSet: dataSet)
+    dataSet.drawCirclesEnabled = false
+    dataSet.drawValuesEnabled = false
+    dataSet.colors = [UIColor.orangePhonemo]
+    dataSet.lineWidth = CGFloat(integerLiteral: 3)
+    
+    statChart.drawGridBackgroundEnabled = false
+    statChart.chartDescription?.text = ""
+    statChart.data = data
+    statChart.notifyDataSetChanged()
   }
 }

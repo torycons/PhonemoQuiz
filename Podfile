@@ -16,5 +16,6 @@ target 'PhonemoQuiz' do
   pod 'SwiftyJSON'
   pod 'SDWebImage', '~> 4.0'
   pod 'Alamofire', '~> 4.7'
+  pod 'Charts'
   
 end

@@ -105,18 +105,36 @@
                                     <constraint firstAttribute="trailing" secondItem="tcM-kc-tAK" secondAttribute="trailing" constant="30" id="v5b-7W-Ujt"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="สถิติการแข่งขัน" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uLt-Rs-6G0">
-                                <rect key="frame" x="20" y="269" width="112" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="SukhumvitSet-SemiBold" family="Sukhumvit Set" pointSize="18"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="uMi-fl-C0u">
+                                <rect key="frame" x="20" y="269" width="374" height="253.66666666666663"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="สถิติการแข่งขัน" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uLt-Rs-6G0">
+                                        <rect key="frame" x="0.0" y="0.0" width="112" height="28.666666666666668"/>
+                                        <fontDescription key="fontDescription" name="SukhumvitSet-SemiBold" family="Sukhumvit Set" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sbH-26-oZC" customClass="LineChartView" customModule="Charts">
+                                        <rect key="frame" x="0.0" y="43.666666666666686" width="374" height="210"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="253.66999999999999" id="0Mu-qg-nQu"/>
+                                    <constraint firstItem="sbH-26-oZC" firstAttribute="leading" secondItem="uMi-fl-C0u" secondAttribute="leading" id="0aq-tT-t9F"/>
+                                    <constraint firstAttribute="bottom" secondItem="sbH-26-oZC" secondAttribute="bottom" id="Blc-8U-axI"/>
+                                    <constraint firstAttribute="trailing" secondItem="sbH-26-oZC" secondAttribute="trailing" id="FOb-e9-16m"/>
+                                    <constraint firstItem="sbH-26-oZC" firstAttribute="top" secondItem="uLt-Rs-6G0" secondAttribute="bottom" constant="15" id="McP-jq-n1Q"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="uMi-fl-C0u" firstAttribute="top" secondItem="BXc-Hv-bpn" secondAttribute="bottom" constant="55" id="NnU-x2-Vfb"/>
                             <constraint firstItem="BXc-Hv-bpn" firstAttribute="leading" secondItem="aP0-ZR-ssq" secondAttribute="leading" constant="20" id="ORH-Ft-Zzr"/>
                             <constraint firstItem="aP0-ZR-ssq" firstAttribute="trailing" secondItem="BXc-Hv-bpn" secondAttribute="trailing" constant="20" id="gKW-5y-6mf"/>
+                            <constraint firstItem="aP0-ZR-ssq" firstAttribute="trailing" secondItem="uMi-fl-C0u" secondAttribute="trailing" constant="20" id="pSK-bx-Tsg"/>
+                            <constraint firstItem="uMi-fl-C0u" firstAttribute="leading" secondItem="aP0-ZR-ssq" secondAttribute="leading" constant="20" id="wyQ-KK-ZXg"/>
                             <constraint firstItem="BXc-Hv-bpn" firstAttribute="top" secondItem="aP0-ZR-ssq" secondAttribute="top" constant="40" id="yFK-JN-oFT"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="aP0-ZR-ssq"/>
@@ -136,11 +154,12 @@
                         <outlet property="profileName" destination="bNL-gS-OvT" id="eu8-q9-JLf"/>
                         <outlet property="profileStackWrapper" destination="tcM-kc-tAK" id="D3f-Rg-QAZ"/>
                         <outlet property="profileWrapper" destination="BXc-Hv-bpn" id="Nvf-PH-PMc"/>
+                        <outlet property="statChart" destination="sbH-26-oZC" id="jGr-aN-7ue"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ACI-fI-61b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1880.8" y="1906.5967016491757"/>
+            <point key="canvasLocation" x="1879.7101449275365" y="1905.9782608695655"/>
         </scene>
     </scenes>
     <resources>

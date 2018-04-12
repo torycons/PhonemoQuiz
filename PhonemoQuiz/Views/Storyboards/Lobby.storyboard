@@ -67,19 +67,20 @@
                                         </collectionViewFlowLayout>
                                         <cells/>
                                     </collectionView>
-                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="82u-ID-BoH">
-                                        <rect key="frame" x="30" y="54" width="255" height="236"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="82u-ID-BoH">
+                                        <rect key="frame" x="147.5" y="140" width="20" height="20"/>
                                     </activityIndicatorView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="NTC-jJ-cRM" secondAttribute="trailing" constant="30" id="1HI-GN-J98"/>
+                                    <constraint firstItem="82u-ID-BoH" firstAttribute="centerY" secondItem="7r7-uy-XHC" secondAttribute="centerY" id="GgI-0b-Jdl"/>
                                     <constraint firstItem="6Gk-iL-jQV" firstAttribute="leading" secondItem="7r7-uy-XHC" secondAttribute="leading" constant="15" id="Ha5-sB-iTf"/>
                                     <constraint firstAttribute="bottom" secondItem="NTC-jJ-cRM" secondAttribute="bottom" constant="10" id="Qxr-Is-y88"/>
                                     <constraint firstItem="NTC-jJ-cRM" firstAttribute="centerX" secondItem="7r7-uy-XHC" secondAttribute="centerX" id="UzY-Zl-JvN"/>
                                     <constraint firstItem="6Gk-iL-jQV" firstAttribute="top" secondItem="7r7-uy-XHC" secondAttribute="top" constant="15" id="Vpe-bZ-39U"/>
                                     <constraint firstItem="NTC-jJ-cRM" firstAttribute="top" secondItem="6Gk-iL-jQV" secondAttribute="bottom" constant="10" id="cT9-I6-a7Y"/>
+                                    <constraint firstItem="82u-ID-BoH" firstAttribute="centerX" secondItem="7r7-uy-XHC" secondAttribute="centerX" id="hah-LI-Ffw"/>
                                     <constraint firstItem="NTC-jJ-cRM" firstAttribute="leading" secondItem="7r7-uy-XHC" secondAttribute="leading" constant="30" id="mln-8f-1Ou"/>
                                 </constraints>
                             </view>
