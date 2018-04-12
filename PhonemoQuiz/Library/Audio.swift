@@ -33,7 +33,7 @@ struct Audio {
       audioPlayer.volume = 1.0
       return audioPlayer
     } catch {
-      print("Error: Can't play word soun d")
+      print("Error: Can't play word sound")
     }
     return audioPlayer
   }
